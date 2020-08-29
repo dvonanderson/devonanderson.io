@@ -2,7 +2,7 @@ import React from "react"
 import logo from "../assets/logo.svg"
 import { FaAlignRight } from "react-icons/fa"
 import PageLinks from "../constants/links"
-import styled from "@emotion/styled"
+import styled from "styled-components"
 
 const Container = styled.div`
   position: absolute;
@@ -18,6 +18,7 @@ const Container = styled.div`
     background: transparent;
   }
 `
+
 const Inner = styled.div`
   width: 90vw;
   max-width: 1170px;
@@ -43,17 +44,13 @@ const Button = styled.button`
   color: var(--clr-primary-5);
   cursor: pointer;
   transition: var(--transition);
-  &:hover{
+  :hover{
     color: var(--clr-primary-2);
   }
   @media screen and (min-width: 768px) {
     display: none;
   }
 `
-const navLinks = {
-  display: 'none',
-
-}
 
 const Navbar = () => {
   return (
@@ -65,7 +62,7 @@ const Navbar = () => {
             <FaAlignRight />
           </Button>
         </Header>
-        <PageLinks styleClass=""></PageLinks>
+        <PageLinks complex/>
       </Inner>
     </Container>
   )

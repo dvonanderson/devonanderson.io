@@ -1,6 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
-import styled from "@emotion/styled"
+import styled, { css } from "styled-components"
 
 const data = [
   {
@@ -31,7 +31,7 @@ const data = [
 ]
 
 const StyledLinks = styled.ul`
-  display: ${props => props.styleClass.navLinks.display};
+  display: none;
 
   @media screen and (min-width: 768px) {
     display: flex;
@@ -42,13 +42,12 @@ const StyledLinks = styled.ul`
     }
     a {
       text-transform: capitalize;
-      color: ${props => props.primary ? 'hotpink' : 'yellow'};
+      color: var(--clr-grey-1);
       font-weight: bold;
       letter-spacing: var(--spacing);
       transition: var(--transition);
       padding: 0.5rem 0;
-
-      &:hover {
+      :hover {
         color: var(--clr-primary-5);
         box-shadow: 0px 2px var(--clr-primary-5);
       }
@@ -56,20 +55,18 @@ const StyledLinks = styled.ul`
   }
 `
 
-const PageLinks = ({styleClass}) => {
-  const tempLinks = data.map(link => {
-    return (
-      <li key={link.id}>
-        <Link to={link.url}>{link.text}</Link>
-      </li>
-    )
-  })
+const tempLinks = data.map(link => {
+  return(
+    <li key={link.id}>
+      <Link to={link.url}>{link.text}</Link>
+    </li>
+  )
+})
 
+export default () => {
   return (
-    <PageLinks>
+    <StyledLinks>
       {tempLinks}
-    </PageLinks>
+    </StyledLinks>
   )
 }
-
-export default PageLinks

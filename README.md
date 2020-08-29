@@ -9,7 +9,8 @@
 
   🚀 **dvonanderson@gmail.com**
 
-  # Tech used
 
-- [react icons] :https://react-icons.github.io/react-icons/
-- [strapi backend]:https://github.com/john-smilga/strapi-gatsby-porfolio-2020-api
+## Tech used
+
+[react icons] :https://react-icons.github.io/react-icons/
+[strapi backend]:https://github.com/john-smilga/strapi-gatsby-porfolio-2020-api

@@ -10,7 +10,9 @@ import { Global, css} from '@emotion/core'
 
 export default () => {
   return (
-    <Layout />
+    <Layout>
+      <Hero />
+    </Layout>
   )
 }
 // ...GatsbyImageSharpFluid

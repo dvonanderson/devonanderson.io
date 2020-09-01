@@ -25,7 +25,7 @@ const Header = styled.header`
   position: relative;
 
   @media screen and (min-width: 992px) {
-    ::before {
+    &:before {
       content: "";
       position: absolute;
       top: 0;
@@ -41,7 +41,7 @@ const Header = styled.header`
 const CenterContainer = styled.div.attrs(props => ({
   className: "section-center"
 }))`
-  height: 100%;
+  height: 70%;
   display: grid;
   align-items: center;
 
@@ -51,21 +51,19 @@ const CenterContainer = styled.div.attrs(props => ({
 `
 const Article = styled.article`
   background: var(--clr-primary-10);
-
   @media screen and (min-width: 992px) {
     grid-row: 1/1;
-    grid-column: 1 / span 8;
+    grid-column: 2 / span 7;
   }
-
   @media screen and(min-width: 1170 px) {
-    grid-column: 1 / span 8;
+    grid-column: 2 / span 7;
   }
 `
 const HeroUnderline = styled.div.attrs(props => ({
   className: "underline"
 }))`
   margin-bottom: 0.5rem;
-  margin-left: 0;
+  margin-left: 0px;
 `
 const H4 = styled.h4`
   color: var(--clr-grey-5);
@@ -85,7 +83,7 @@ const StyledImage = styled(Image)`
   @media screen and (min-width: 992px) {
       display: block;
       grid-row: 1/1;
-      grid-column: 6/-1;
+      grid-column: 7 /-2;
     }
 `
 

@@ -44,13 +44,21 @@ const GlobalStyles = createGlobalStyle`
   }
 
   /* ===Global Styles=== */
-  *,
-  ::after,
-  ::before {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  * {
+    & :after{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    & :before{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
   }
+
+
   body {
     font-family: var(--ff-secondary);
     background: var(--clr-white);
@@ -94,25 +102,25 @@ const GlobalStyles = createGlobalStyle`
   @media screen and (min-width: 800px) {
     h1 {
       font-size: 4rem;
+      line-height: 1;
     }
     h2 {
       font-size: 2.5rem;
+      line-height: 1;
     }
     h3 {
       font-size: 1.75rem;
+      line-height: 1;
     }
     h4 {
       font-size: 1rem;
+      line-height: 1;
     }
+
     body {
       font-size: 1rem;
     }
-    h1,
-    h2,
-    h3,
-    h4 {
-      line-height: 1;
-    }
+
   }
 
   .btn {
@@ -160,6 +168,7 @@ const GlobalStyles = createGlobalStyle`
     width: 15rem;
     display: flex;
     justify-content: space-between;
+    padding-left: 0px;
   }
 
   .social-link {

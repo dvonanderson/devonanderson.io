@@ -3,10 +3,12 @@ import Title from "./Title"
 import services from "../constants/services"
 import styled from "styled-components"
 
-const ServiceSection = styled.section`
-   padding: 5rem 0px;
+const ServiceSection = styled.section.attrs(props => ({
+  className: "section"
+}))`
    background: var(--clr-grey-10);
 `
+
 const ServiceContainer = styled.div`
   width: 90vw;
   margin: 0 auto;

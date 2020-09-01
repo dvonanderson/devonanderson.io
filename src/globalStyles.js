@@ -179,5 +179,42 @@ const GlobalStyles = createGlobalStyle`
       color: var(--clr-primary-5);
     }
   }
+
+  .section {
+    padding: 5rem -0;
+  }
+
+  //todo look at making this more dynamic inside of the component.
+  .job-btn {
+    background: transparent;
+    border-color: transparent;
+    text-transform: capitalize;
+    font-size: 1.25rem;
+    letter-spacing: var(--spacing);
+    margin: 0 0.5rem;
+    transition: var(--transition);
+    cursor: pointer;
+    padding: 0.25rem 0;
+    line-height: 1;
+
+    & :hover {
+      color: var(--clr-primary-5);
+      box-shadow: 0 2px var(--clr-primary-5);
+    }
+    @media screen and (min-width: 992px) {
+      margin-bottom: 1rem;
+      & :hover {
+        box-shadow: -2px 0 var(--clr-primary-5);
+      }
+    }
+  }
+
+  .active-btn {
+    color: var(--clr-primary-5);
+    box-shadow: 0 2px var(--clr-primary-5);
+    @media screen and (min-width: 992px) {
+      box-shadow: -2px 0 var(--clr-primary-5);
+    }
+  }
 `
 export default GlobalStyles

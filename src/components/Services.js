@@ -4,9 +4,13 @@ import services from "../constants/services"
 import styled from "styled-components"
 
 const ServiceSection = styled.section`
-   padding: 5rem 0;
+   padding: 5rem 0px;
    background: var(--clr-grey-10);
-
+`
+const ServiceContainer = styled.div`
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
   @media screen and (min-width: 676px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -15,6 +19,7 @@ const ServiceSection = styled.section`
     column-gap: 2rem;
   }
   @media screen and (min-width: 992px) {
+    width: 95vw;
     grid-template-columns: 1fr 1fr 1fr;
   }
 `
@@ -54,7 +59,7 @@ const Services = () => {
     return (
       <ServiceSection>
         <Title title="services"/>
-        <div className="section-center services-center">
+        <ServiceContainer>
           {
             services.map(service => {
               const { id, icon, title, text } = service
@@ -69,7 +74,7 @@ const Services = () => {
               )
             })
           }
-        </div>
+        </ServiceContainer>
       </ServiceSection>
     )
 }

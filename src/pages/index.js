@@ -12,7 +12,7 @@ export default () => {
   return (
     <Layout>
       <Hero />
-
+      <Services />
     </Layout>
   )
 }

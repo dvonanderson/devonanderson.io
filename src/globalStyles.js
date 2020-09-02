@@ -18,6 +18,9 @@ const GlobalStyles = createGlobalStyle`
     --clr-primary-9: hsl(185, 94%, 87%);
     --clr-primary-10: hsl(186, 100%, 94%);
 
+    /* alternate color */
+    --clr-devon-background: hsl(60, 4%, 38%);
+
     /* darkest grey - used for headings */
     --clr-grey-1: hsl(209, 61%, 16%);
     --clr-grey-3: hsl(209, 34%, 30%);
@@ -43,15 +46,22 @@ const GlobalStyles = createGlobalStyle`
     --fixed-width: 700px;
   }
 
+  --heading-default-styles: {
+    letter-spacing: var(--spacing);
+    text-transform: capitalize;
+    line-height: 1.25;
+    margin-bottom: 0.75rem;
+    font-family: var(--ff-primary);
+  }
   /* ===Global Styles=== */
   * {
-    & :after{
+    &:after{
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    & :before{
+    &:before{
       margin: 0;
       padding: 0;
       box-sizing: border-box;
@@ -73,27 +83,21 @@ const GlobalStyles = createGlobalStyle`
   a {
     text-decoration: none;
   }
-  h1,
-  h2,
-  h3,
-  h4 {
-    letter-spacing: var(--spacing);
-    text-transform: capitalize;
-    line-height: 1.25;
-    margin-bottom: 0.75rem;
-    font-family: var(--ff-primary);
-  }
   h1 {
     font-size: 3rem;
+    @apply --header-default-styles;
   }
   h2 {
     font-size: 2rem;
+    @apply --header-default-styles;
   }
   h3 {
     font-size: 1.25rem;
+    @apply --header-default-styles;
   }
   h4 {
     font-size: 0.875rem;
+    @apply --header-default-styles;
   }
   p {
     margin-bottom: 1.25rem;
@@ -138,7 +142,7 @@ const GlobalStyles = createGlobalStyle`
     cursor: pointer;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
     border-radius: var(--radius);
-    :hover {
+    &:hover {
       color: var(---clr-primary-1);
       background: var(---clr-primary-8);
     }
@@ -175,7 +179,8 @@ const GlobalStyles = createGlobalStyle`
     font-size: 1.75rem;
     color: var(--clr-grey-1);
     transition: var(--transition);
-    :hover {
+
+    &:hover {
       color: var(--clr-primary-5);
     }
   }
@@ -197,13 +202,14 @@ const GlobalStyles = createGlobalStyle`
     padding: 0.25rem 0;
     line-height: 1;
 
-    & :hover {
+    &:hover {
       color: var(--clr-primary-5);
       box-shadow: 0 2px var(--clr-primary-5);
     }
+
     @media screen and (min-width: 992px) {
       margin-bottom: 1rem;
-      & :hover {
+      &:hover {
         box-shadow: -2px 0 var(--clr-primary-5);
       }
     }
@@ -212,9 +218,16 @@ const GlobalStyles = createGlobalStyle`
   .active-btn {
     color: var(--clr-primary-5);
     box-shadow: 0 2px var(--clr-primary-5);
+
     @media screen and (min-width: 992px) {
       box-shadow: -2px 0 var(--clr-primary-5);
     }
   }
+
+  .service-icon {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
 `
 export default GlobalStyles

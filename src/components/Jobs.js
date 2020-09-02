@@ -5,9 +5,11 @@ import { graphql, useStaticQuery } from "gatsby"
 import { Link } from "gatsby"
 import styled from "styled-components"
 
+
+// (sort: {fields: strapiId, order: DESC})
 const query = graphql`
   {
-    allStrapiJobs(sort: {fields: strapiId, order: DESC}) {
+    allStrapiJobs {
       nodes {
         strapiId
         company
@@ -32,7 +34,8 @@ const JobsContainer = styled.div`
   width: 80vw;
   margin: 0 auto;
   max-width: var(--max-width);
-  @media screen and(min-width: 992px) {
+
+  @media screen and (min-width: 992px) {
     width: 90vw;
     display: grid;
     grid-template-columns: 200px 1fr;
@@ -102,7 +105,7 @@ const Jobs = () => {
 
   return (
     <section className="section">
-      <Title title="experience"/>
+      <Title title="Experience"/>
       <JobsContainer>
         <ButtonContainer>
           {

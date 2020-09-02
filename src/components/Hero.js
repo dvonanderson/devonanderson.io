@@ -7,7 +7,7 @@ import styled from "styled-components";
 
 const query = graphql`
   {
-    file(relativePath: {eq: "buck_eye-logo.png"}) {
+    file(relativePath: {eq: "dsa_headshot_logo.png"}) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -21,11 +21,11 @@ const Header = styled.header`
   margin-top: -5rem;
   padding-top: 5rem;
   height: 100vh;
-  background: var(--clr-primary-10);
+  /* background: var(--clr-primary-10); */
   position: relative;
 
   @media screen and (min-width: 992px) {
-    &:before {
+    &::before {
       content: "";
       position: absolute;
       top: 0;
@@ -50,13 +50,13 @@ const CenterContainer = styled.div.attrs(props => ({
   }
 `
 const Article = styled.article`
-  background: var(--clr-primary-10);
+  /* background: var(--clr-primary-10); */
   @media screen and (min-width: 992px) {
     grid-row: 1/1;
-    grid-column: 2 / span 7;
+    grid-column: 1 / span 8;
   }
   @media screen and(min-width: 1170 px) {
-    grid-column: 2 / span 7;
+    grid-column: 1 / span 8;
   }
 `
 const HeroUnderline = styled.div.attrs(props => ({
@@ -83,7 +83,7 @@ const StyledImage = styled(Image)`
   @media screen and (min-width: 992px) {
       display: block;
       grid-row: 1/1;
-      grid-column: 7 /-2;
+      grid-column: 6/-1;
     }
 `
 
@@ -105,7 +105,7 @@ const Hero = () => {
             <SocialLinks />
           </div>
         </Article>
-        <StyledImage fluid={fluid} alt="hero-logo"/>
+        <StyledImage fluid={fluid} alt="image of devon"/>
       </CenterContainer>
     </Header>
   )

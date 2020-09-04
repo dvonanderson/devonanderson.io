@@ -60,7 +60,7 @@ const ServiceUnderline = styled.div.attrs(props => ({
 const Services = () => {
     return (
       <ServiceSection>
-        <Title title="Services"/>
+        <Title title="services"/>
         <ServiceContainer>
           {
             services.map(service => {

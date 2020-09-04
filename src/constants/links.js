@@ -1,6 +1,5 @@
 import React from "react"
-import { Link } from "gatsby"
-import styled, { css } from "styled-components"
+import { LinksWrapper, StyledLink, Li } from "styled/Links"
 
 const data = [
   {
@@ -30,43 +29,18 @@ const data = [
   },
 ]
 
-const StyledLinks = styled.ul`
-  display: none;
-
-  @media screen and (min-width: 768px) {
-    display: flex;
-    justify-content: flex-end;
-
-    li {
-      margin-right: 2rem;
-    }
-    a {
-      text-transform: capitalize;
-      color: var(--clr-grey-1);
-      font-weight: bold;
-      letter-spacing: var(--spacing);
-      transition: var(--transition);
-      padding: 0.5rem 0;
-      :hover {
-        color: var(--clr-primary-5);
-        box-shadow: 0px 2px var(--clr-primary-5);
-      }
-    }
-  }
-`
-
 const tempLinks = data.map(link => {
   return(
-    <li key={link.id}>
-      <Link to={link.url}>{link.text}</Link>
-    </li>
+    <Li key={link.id}>
+      <StyledLink to={link.url}>{link.text}</StyledLink>
+    </Li>
   )
 })
 
 export default () => {
   return (
-    <StyledLinks>
+    <LinksWrapper>
       {tempLinks}
-    </StyledLinks>
+    </LinksWrapper>
   )
 }

@@ -86,16 +86,7 @@ const JobDescription = styled.div`
 const JobIcon = styled(FaAngleDoubleRight) `
   color: var(--clr-primary-5);
 `
-const AboutButton = styled(Link).attrs(props => ({
-  className: "btn",
-}))
-`
-  display: block;
-  width: 12rem;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 3rem;
-`
+
 const Jobs = () => {
   const data = useStaticQuery(query)
   //alias your node
@@ -138,7 +129,7 @@ const Jobs = () => {
           }
         </JobArticle>
       </JobsContainer>
-      <AboutButton to="/about">...more info</AboutButton>
+      <Link to="/about" className="btn center-btn">more info</Link>
     </section>
   )
 }

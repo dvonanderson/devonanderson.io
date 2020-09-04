@@ -1,7 +1,6 @@
 import React from "react"
 import { FaSearchLocation, FaSketch } from "react-icons/fa"
 import { ImPen} from "react-icons/im"
-import styled from "styled-components"
 
 export default [
   {
@@ -13,7 +12,7 @@ export default [
   {
     id: 2,
     icon: <FaSketch className="service-icon" />,
-    title: "Web Research, Design & Development",
+    title: "Research, Design & Development",
     text: `Findings from the research and design phases are utilized for the production of specific products including materials, systems, and methods. I will engineer the solution utilizing the research and designs to produce awesome clean products for you and your brand.`,
   },
   {

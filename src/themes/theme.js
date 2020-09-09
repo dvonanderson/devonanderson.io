@@ -1,3 +1,4 @@
+import {device} from "themes/mediaQueries"
 
 // Darker shades of primary
 // export const primary1 = "hsl(43, 86%, 17%)";

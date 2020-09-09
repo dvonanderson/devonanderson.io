@@ -191,15 +191,15 @@ Global Styles
     margin-right: auto;
   }
 
-  .section-center {
+  /* .section-center {
     width: 90vw;
     margin: 0 auto;
     max-width: 1170px;
 
-    @media screen and (min-width: 992px) {
+    @media ${device.laptop} {
       width: 95vw;
     }
-  }
+  } */
 
   .social-links {
     margin-top: 2rem;
@@ -219,9 +219,9 @@ Global Styles
     }
   }
 
-  .section {
+  /* .section {
     padding: 5rem -0;
-  }
+  } */
 
   .service-icon {
     font-size: 2rem;

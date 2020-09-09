@@ -89,7 +89,7 @@ Global Styles
   Buttons
   ===============
   */
-  .btn {
+  /* .btn {
     text-transform: uppercase;
     background: var(--clr-primary-5);
     color: var(--clr-primary-9);
@@ -142,7 +142,7 @@ Global Styles
     @media screen and (min-width: 992px) {
       box-shadow: -2px 0 var(--clr-primary-5);
     }
-  }
+  } */
 
   .center-btn {
     display: block;

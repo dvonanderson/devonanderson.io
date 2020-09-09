@@ -17,9 +17,9 @@ export default ({data}) => {
       <GlobalStyles />
       <Layout>
         <Hero />
-        {/* <Services />
+        <Services />
         <Jobs />
-        <Projects projects={projects} title="featured projects" showLink/> */}
+        {/* <Projects projects={projects} title="featured projects" showLink/> */}
       </Layout>
     </ThemeProvider>
   )

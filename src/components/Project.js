@@ -9,38 +9,23 @@ const ProjectArticle = styled.article`
   display: grid;
   margin-bottom: 4rem;
 
-  &:hover ${StyledImage}:after {
-    opacity: 0;
-  }
-
   @media ${device.laptop} {
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
 
-    /* NEED TO COME BACK TO THIS */
-    /* &:nth-of-type(even) {
-      background: green;
-      ${StyledImage} {
-        grid-column: 5 / 1;
-        grid-row: 1 / 1;
-      }
-      & ${ProjectInfoContainer} {
-        grid-column: 2 / span 7;
-        grid-row: 1 / 1;
-        text-align: left;
-      }
-
-    } */
-
   }
 `
-export const StyledImage = styled(Image)`
+const ProjectImage = styled(Image)`
   border-top-left-radius: ${props => props.theme.radius};
   border-top-right-radius: ${props => props.theme.radius};
   height: 19rem;
   z-index: 1;
 
-  &:after {
+  ${ProjectArticle}:hover & :after  {
+     opacity: 0;
+  }
+
+  & :after {
     content: "";
     position: absolute;
     top: 0;
@@ -66,9 +51,15 @@ export const StyledImage = styled(Image)`
     height: 30rem;
     border-radius: ${props => props.theme.radius};
     box-shadow: ${props => props.theme.darkShadow};
+
+    ${ProjectArticle}:nth-of-type(even) & {
+      grid-column: 5 / -1;
+      grid-row: 1 / 1;
+    }
   }
 `
-export const ProjectInfoContainer = styled.div`
+
+const ProjectInfoContainer = styled.div`
   background: ${props => props.theme.white};
   padding: 1rem 2rem;
   border-bottom-left-radius: ${props => props.theme.radius};
@@ -86,25 +77,31 @@ export const ProjectInfoContainer = styled.div`
     z-index: 1;
     grid-column: 5 /12;
     grid-row: 1 / 1;
+
+    ${ProjectArticle} :nth-of-type(even) & {
+      grid-column: 2 / span 7;
+      grid-row: 1 / 1;
+      text-align: left;
+    }
   }
 `
 
-export const Span = styled.span`
+const Span = styled.span`
   display: inline-block;
   font-size: 1.25rem;
   color: ${props => props.theme.primary5};
   margin-bottom: 0.75rem;
 `
 
-export const ProjectDescription = styled.p`
+const ProjectDescription = styled.p`
   word-spacing: 15px;
   color: ${props => props.theme.primary3};
 `
 
-export const ProjectStack = styled.div`
+const ProjectStack = styled.div`
   margin-bottom: 1rem;
 `
-export const StackSpan = styled.span`
+const StackSpan = styled.span`
   display: inline-block;
   background: ${props => props.theme.grey9};
   color: ${props => props.theme.grey5};
@@ -126,18 +123,18 @@ const projectIcon = css`
   }
 `
 
-export const GithubSquare = styled(FaGithubSquare)`
+const GithubSquare = styled(FaGithubSquare)`
   ${projectIcon}
 `
 
-export const ShareSquare = styled(FaShareSquare)`
+const ShareSquare = styled(FaShareSquare)`
   ${projectIcon}
 `
 
 const Project = ({description, github, title, url, stack, image, index}) => {
   return (
     <ProjectArticle>
-      <StyledImage fluid={image.childImageSharp.fluid} />
+      <ProjectImage fluid={image.childImageSharp.fluid} />
       <ProjectInfoContainer>
         <Span>0{index + 1}.</Span>
         <h3>{title}</h3>
@@ -161,6 +158,13 @@ const Project = ({description, github, title, url, stack, image, index}) => {
   )
 }
 
-Project.propTypes = {}
 
+Project.propTypes = {
+  title: PropTypes.string.isRequired,
+  github: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  url: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  stack: PropTypes.arrayOf(PropTypes.object).isRequired
+}
 export default Project

@@ -11,15 +11,20 @@ import { ThemeProvider } from "styled-components"
 import * as theme from "themes/theme"
 
 export default ({data}) => {
-  const { allStrapiProjects: {nodes:projects}} = data
+  const {
+    allStrapiProjects: {nodes:projects},
+    allStrapiBlogs: {nodes:blogs}
+  } = data
+
   return (
     <ThemeProvider theme={theme}>
-      <GlobalStyles />
+      <GlobalStyles></GlobalStyles>
       <Layout>
         <Hero />
         <Services />
         <Jobs />
-        {/* <Projects projects={projects} title="featured projects" showLink/> */}
+        <Projects projects={projects} title="featured projects" showLink/>
+        <Blogs blogs={blogs} title="blog" showLink/>
       </Layout>
     </ThemeProvider>
   )
@@ -30,6 +35,7 @@ export const query = graphql `
     allStrapiProjects(filter: {featured: {eq: true}}) {
       nodes {
         title
+        strapiId
         stack:stack_item {
           id
           title
@@ -38,6 +44,28 @@ export const query = graphql `
         featured
         description
         url
+        image {
+          childImageSharp {
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    }
+
+    allStrapiBlogs(sort: {
+      fields: date,
+      order: DESC
+    }, limit: 3) {
+      nodes {
+        slug
+        content
+        description
+        date(formatString: "MMMM Do, YYYY")
+        id
+        title
+        category
         image {
           childImageSharp {
             fluid {

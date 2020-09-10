@@ -1,13 +1,22 @@
 import styled from "styled-components"
 import { device } from "../themes/mediaQueries"
 import {Link } from "gatsby"
+
 export const Button = styled.button`
   text-transform: uppercase;
   background: ${props => props.theme.primary5};
   color: ${props => props.theme.primary9};
   padding: 0.375rem 0.75rem;
   letter-spacing: ${props => props.theme.spacing};
-  display: inline-block;
+
+  /* center buttton styles --start */
+  display: ${props => props.centerbtn ? "block" : "inline-block"};
+  width: ${props => props.centerbtn ? "12rem" : "0"};
+  text-align: ${props => props.centerbtn ? "center" : "none"};
+  margin: ${props => props.centerbtn ? `0 auto` : "0"};
+  margin-top: ${props => props.centerbtn ? "3rem" : "0"};
+/* center buttton styles --end */
+
   font-weight: 700;
   -webkit-transition: ${props => props.theme.transition};
   transition: ${props => props.theme.transition};
@@ -22,6 +31,7 @@ export const Button = styled.button`
     background: ${props => props.theme.primary8};
   }
 `
+
 export const JobButton = styled.button`
   background: transparent;
   border-color: transparent;
@@ -52,11 +62,5 @@ export const JobButton = styled.button`
   }
 `
 
-export const CenterButton = styled(Button)`
-  display: block;
-  width: 12rem;
-  text-align: center;
-  margin: 0 auto;
-  margin-top: 3rem;
-`
+
 

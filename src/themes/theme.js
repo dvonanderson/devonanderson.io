@@ -51,3 +51,4 @@ export const darkShadow = "0 5px 15px rgba(0, 0, 0, 0.2)";
 //Widths
 export const maxWidth = "1170px";
 export const fixedWidth = "700px";
+

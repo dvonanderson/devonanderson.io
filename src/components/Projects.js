@@ -2,31 +2,35 @@ import React from "react"
 import Title from "./Title"
 import Project from "./Project"
 import { Link } from "gatsby"
+import { Section, SectionCenter } from "styled/Section";
 import styled from "styled-components"
+import { Button } from "styled/Button";
 
-const ProjectsSection = styled.section.attrs(props => ({
-  className: "section"
-}))`
-  background: var(--clr-grey-10);
+const ProjectsSection = styled(Section)`
+  background: ${props => props.theme.grey10};
 `
 const Projects = ({projects, title, showLink}) => {
   return (
     <ProjectsSection>
       <Title title={title} />
-      <div className="section-center projects-center">
+      <SectionCenter>
         {
           projects.map((project, index) => {
             return (
-              <Project key={project.id} index={index} {...project}/>
+              <Project key={project.strapiId} index={index} {...project}/>
             )
           })
         }
-      </div>
+      </SectionCenter>
       {
         showLink && (
-          <Link to='/projects' className="btn center-btn">
+          <Button
+            as={Link}
+            to="/projects"
+            centerbtn="true"
+          >
             projects
-          </Link>
+          </Button>
         )
         }
     </ProjectsSection>

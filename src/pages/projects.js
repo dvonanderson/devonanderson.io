@@ -1,17 +1,32 @@
 import React from "react"
-import Layout from "../components/Layout"
+import Layout from "components/Layout"
 import { graphql } from "gatsby"
-import Projects from "../components/Projects"
+import Projects from "components/Projects"
+import styled from "styled-components"
+import GlobalStyles from 'themes/globalStyles'
+import { ThemeProvider } from "styled-components"
+import * as theme from "themes/theme"
 
+const AllProjectsSection = styled.section`
+  background: ${props => props.theme.grey10};
+  min-height: calc(100vh - 5rem - 9rem);
+`
 const ProjectsPage = ({
   data: {allStrapiProjects: {
     nodes: projects
   }}
 }) => {
   return (
-    <section className="projects-page">
-      <Projects projects={projects} title="all projects" />
-    </section>
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Layout>
+        <AllProjectsSection>
+          <Projects projects={projects} title="all projects" />
+        </AllProjectsSection>
+      </Layout>
+    </ThemeProvider>
+
+
   )
 }
 

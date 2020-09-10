@@ -24,7 +24,7 @@ export default ({data}) => {
         <Services />
         <Jobs />
         <Projects projects={projects} title="featured projects" showLink/>
-        <Blogs blogs={blogs} title="blog" showLink/>
+        <Blogs blogs={blogs} title="latest articles" showLink/>
       </Layout>
     </ThemeProvider>
   )
@@ -60,7 +60,6 @@ export const query = graphql `
     }, limit: 3) {
       nodes {
         slug
-        content
         description
         date(formatString: "MMMM Do, YYYY")
         id

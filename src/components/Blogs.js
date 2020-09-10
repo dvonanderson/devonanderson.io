@@ -2,12 +2,23 @@ import React from "react"
 import Title from "./Title"
 import Blog from "./Blog"
 import { Link } from "gatsby"
+import { Button } from "styled/Button"
+import styled from "styled-components"
+import { Section, SectionCenter  } from "styled/Section";
+import { device } from "../themes/mediaQueries"
 
+const BlogsWrapper = styled(SectionCenter)`
+  @media ${device.mobileM} {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));
+    column-gap: 2rem;
+  }
+`
 export const Blogs = ({blogs, title, showLink}) => {
   return (
-    <section className="section">
+    <Section>
       <Title title={title} />
-      <div className="section-center blogs-center">
+      <BlogsWrapper>
         {
           blogs.map(blog => {
             return (
@@ -15,11 +26,18 @@ export const Blogs = ({blogs, title, showLink}) => {
             )
           })
         }
-      </div>
+      </BlogsWrapper>
       {
-        showLink && <Link to="/blog" className="btn center-btn">blog</Link>
+        showLink &&
+        <Button
+          as={Link}
+          to="/blog"
+          centerbtn="true"
+        >
+          blog
+        </Button>
       }
-    </section>
+    </Section>
   )
 }
 export default Blogs

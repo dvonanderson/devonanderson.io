@@ -4,7 +4,7 @@ import services from "../constants/services"
 import styled from "styled-components"
 import { Section } from "styled/Section"
 import { device } from "../themes/mediaQueries"
-import { Underline } from "styled/Underline"
+import Underline from "styled/Underline"
 
 const ServiceSection = styled(Section)`
   background: ${props => props.theme.grey10};
@@ -28,6 +28,7 @@ const ServiceContainer = styled.div`
     grid-template-columns: 1fr 1fr 1fr;
   }
 `
+
 const ServiceArticle = styled.article`
   background: ${props => props.theme.white};
   padding: 3rem 1.5rem;
@@ -37,25 +38,18 @@ const ServiceArticle = styled.article`
   -webkit-transition: ${props => props.theme.transition};
   transition: ${props => props.theme.transition};
 
-  &:hover {
+  & :hover {
     background: ${props => props.theme.primary5};
     color: ${props => props.theme.primary9};
    }
+
   & p {
     -webkit-transition: ${props => props.theme.transition};
     transition: ${props => props.theme.transition};
-    &:hover {
+
+    & :hover {
       color: ${props => props.theme.primary9};
     }
-  }
-`
-const ServiceUnderline = styled(Underline)`
-  width: 3rem;
-  height: 0.12rem;
-  -webkit-transition: ${props => props.theme.transition};
-  transition: ${props => props.theme.transition};
-  &:hover {
-    background: ${props => props.theme.primary9};
   }
 `
 
@@ -72,7 +66,7 @@ const Services = () => {
                 <ServiceArticle key={id}>
                   {icon}
                   <h4>{title}</h4>
-                  <ServiceUnderline />
+                  <Underline serviceUnderline="true"/>
                   <p>{text}</p>
                 </ServiceArticle>
               )

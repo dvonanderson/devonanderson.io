@@ -78,3 +78,20 @@ export const  pagesStyling = css`
   background: ${grey10};
   min-height: calc(100vh - 5rem - 9rem);
 `
+//Project Icons
+export const projectIcon = css`
+  color: ${primary5};
+  font-size: 1.25rem;
+  margin-right: 0.5rem;
+  transition: ${transition};
+
+  & :hover {
+    color: ${primary1};
+  }
+`
+
+//Service Icons
+export const serviceIcons = css`
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+`

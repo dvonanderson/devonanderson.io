@@ -4,7 +4,7 @@ import SocialLinks from "constants/socialLinks"
 import styled from 'styled-components'
 import { device } from "themes/mediaQueries"
 import { SectionCenter } from 'styled/Section'
-import { Underline } from "styled/Underline"
+import Underline from "styled/Underline"
 import Image from "gatsby-image"
 
 const HeroHeader = styled.header`
@@ -48,11 +48,6 @@ const Article = styled.article`
     grid-column: 1 / span 8;
   } */
 
-`
-
-const HeroUnderline = styled(Underline)`
-  margin-bottom: 0.5rem;
-  margin-left: 0px;
 `
 
 const H4 = styled.h4`
@@ -104,7 +99,7 @@ const Hero = () => {
       <HeroSection>
         <Article>
           <div>
-            <HeroUnderline />
+            <Underline heroUnderline="true"/>
             <h1>Hi, I'm Devon</h1>
             <H4>Fullstack Developer</H4>
             <SocialLinks />

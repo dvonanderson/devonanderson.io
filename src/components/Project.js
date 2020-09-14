@@ -3,6 +3,7 @@ import PropTypes from "prop-types"
 import styled, {css} from "styled-components"
 import { device } from "themes/mediaQueries";
 import Image from "gatsby-image"
+import ProjectStackSpan from "styled/StackSpan"
 import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
 
 const ProjectArticle = styled.article`
@@ -101,34 +102,13 @@ const ProjectDescription = styled.p`
 const ProjectStack = styled.div`
   margin-bottom: 1rem;
 `
-const StackSpan = styled.span`
-  display: inline-block;
-  background: ${props => props.theme.grey9};
-  color: ${props => props.theme.grey5};
-  margin-right: 0.5rem;
-  padding: 0.25rem 0.5rem;
-  border-radius: ${props => props.theme.radius};
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  font-size: 0.85rem;
-`
-const projectIcon = css`
-  color: ${props => props.theme.primary5};
-  font-size: 1.25rem;
-  margin-right: 0.5rem;
-  transition: ${props => props.theme.transition};
 
-  &:hover {
-    color: ${props => props.theme.primary1}
-  }
+const StyledGithubSquare = styled(FaGithubSquare)`
+  ${props => props.theme.projectIcon}
 `
 
-const GithubSquare = styled(FaGithubSquare)`
-  ${projectIcon}
-`
-
-const ShareSquare = styled(FaShareSquare)`
-  ${projectIcon}
+const StyledShareSquare = styled(FaShareSquare)`
+  ${props => props.theme.projectIcon}
 `
 
 const Project = ({description, github, title, url, stack, image, index}) => {
@@ -141,16 +121,15 @@ const Project = ({description, github, title, url, stack, image, index}) => {
         <ProjectDescription>{description || "default description"}</ProjectDescription>
         <ProjectStack>
           {
-            stack.map(item =>
-              <StackSpan key={item.id}>{item.title}</StackSpan>)
+            stack.map(item => <ProjectStackSpan key={item.id}>{item.title}</ProjectStackSpan>)
           }
         </ProjectStack>
         <div>
           <a href={github} target="_blank" rel="noopener noreferrer">
-            <ShareSquare />
+            <StyledShareSquare />
           </a>
           <a href={url} target="_blank" rel="noopener noreferrer">
-            <GithubSquare />
+            <StyledGithubSquare />
           </a>
         </div>
       </ProjectInfoContainer>

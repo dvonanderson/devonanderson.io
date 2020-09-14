@@ -1,4 +1,4 @@
-import styled, {keyframes} from 'styled-components'
+import { keyframes, css} from 'styled-components'
 // Darker shades of primary
 
 // export const primary1 = "hsl(43, 86%, 17%)";
@@ -73,3 +73,8 @@ export const darkShadow = "0 5px 15px rgba(0, 0, 0, 0.2)";
 export const maxWidth = "1170px";
 export const fixedWidth = "700px";
 
+//Pages Styling
+export const  pagesStyling = css`
+  background: ${grey10};
+  min-height: calc(100vh - 5rem - 9rem);
+`

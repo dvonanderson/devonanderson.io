@@ -33,6 +33,7 @@ const CloseButton = styled.button`
   border-color: transparent;
   color: ${props => props.theme.redDark};
   cursor: pointer;
+
 `
 
 const Sidebar = ({isOpen, toggleSidebar,}) => {

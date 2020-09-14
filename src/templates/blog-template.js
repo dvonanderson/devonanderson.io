@@ -4,9 +4,6 @@ import Layout from "../components/Layout"
 import ReactMarkdown from "react-markdown"
 import {SectionCenter} from "styled/Section"
 import { Button } from "styled/Button"
-import GlobalStyles from 'themes/globalStyles'
-import { ThemeProvider } from "styled-components"
-import * as theme from "themes/theme"
 import styled from "styled-components"
 
 const BlogTemplateSection = styled.section`
@@ -58,20 +55,16 @@ const BlogContentSection = styled.section``
 const BlogTemplate = ({data}) => {
   const  { content } = data.blog
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Layout>
-        <BlogTemplateSection>
-          <SectionCenter >
-            <article className="blog-content">
-              <ReactMarkdown source={content} />
-            </article>
-            <Button as={Link} to="/blog" centerbtn="true">blog</Button>
-          </SectionCenter>
-        </BlogTemplateSection>
-      </Layout>
-    </ThemeProvider>
-
+    <Layout>
+      <BlogTemplateSection>
+        <SectionCenter >
+          <article className="blog-content">
+            <ReactMarkdown source={content} />
+          </article>
+          <Button as={Link} to="/blog" centerbtn="true">blog</Button>
+        </SectionCenter>
+      </BlogTemplateSection>
+    </Layout>
   )
 }
 export const query = graphql`

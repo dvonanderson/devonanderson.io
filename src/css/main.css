@@ -351,7 +351,7 @@ Sidebar
   color: var(--clr-primary-5);
 } */
 
-.close-btn {
+/*.close-btn {
   position: absolute;
   right: 4.75%;
   top: 2.75%;
@@ -981,7 +981,7 @@ Pages
   min-height: calc(100vh - 5rem - 9rem);
 } */
 
-.error-page {
+/* .error-page {
   display: grid;
   place-items: center;
   background: var(--clr-primary-10);
@@ -992,7 +992,7 @@ Pages
   text-transform: uppercase;
   color: var(--clr-primary-1);
   margin-bottom: 2rem;
-}
+} */
 
 /*
 ===============

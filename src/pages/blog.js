@@ -2,15 +2,11 @@ import React from "react"
 import Layout from "components/Layout"
 import { graphql } from "gatsby"
 import Blogs from "components/Blogs"
-import GlobalStyles from 'themes/globalStyles'
-import { ThemeProvider } from "styled-components"
-import * as theme from "themes/theme"
 import styled from "styled-components"
 
 
 const AllBlogsSection = styled.section`
-  background: ${props => props.theme.grey10};
-  min-height: calc(100vh - 5rem - 9rem);
+  ${props => props.theme.pagesStyling};
 `
 const Blog = ({
   data: {
@@ -18,15 +14,11 @@ const Blog = ({
   }
 }) => {
   return (
-    <ThemeProvider theme={theme}>
-      <GlobalStyles />
-      <Layout>
+    <Layout>
       <AllBlogsSection>
         <Blogs blogs={blogs} title="blog"/>
       </AllBlogsSection>
     </Layout>
-    </ThemeProvider>
-
   )
 }
 

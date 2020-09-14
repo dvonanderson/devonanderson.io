@@ -37,7 +37,7 @@ export const NavInner = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  &img {
+  & img {
     margin-bottom: 0.375rem;
   }
 `
@@ -50,7 +50,7 @@ export const NavButton = styled.button`
   cursor: pointer;
   transition: ${props => props.theme.transition};
 
-  &:hover{
+  & :hover{
     color: ${props => props.theme.primary2};
   }
 
@@ -60,13 +60,13 @@ export const NavButton = styled.button`
 
 `
 
-const Navbar = () => {
+const Navbar = ({toggleSidebar}) => {
   return (
     <StyledNavbar>
       <NavWrapper>
         <NavInner>
           <img src={logo} alt="dsa logo" />
-          <NavButton>
+          <NavButton onClick={toggleSidebar}>
             <FaAlignRight />
           </NavButton>
         </NavInner>

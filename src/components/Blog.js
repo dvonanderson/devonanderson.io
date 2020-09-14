@@ -74,7 +74,7 @@ const Blog = ({id, title, image, date, category, slug, description}) => {
       key={id}
     >
       <article>
-        <StyledImage fluid={image.childImageSharp.fluid} />
+        {image && (<StyledImage fluid={image.childImageSharp.fluid} />)}
       </article>
       <BlogCard>
         <h4>{title}</h4>
@@ -88,6 +88,14 @@ const Blog = ({id, title, image, date, category, slug, description}) => {
   )
 }
 
-Blog.propTypes = {}
+Blog.propTypes = {
+  title: PropTypes.string.isRequired,
+  category: PropTypes.string.isRequired,
+  slug: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  image: PropTypes.object.isRequired,
+  id: PropTypes.string.isRequired,
+  date: PropTypes.string.isRequired,
+}
 
 export default Blog

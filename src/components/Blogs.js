@@ -6,6 +6,7 @@ import { Button } from "styled/Button"
 import styled from "styled-components"
 import { Section, SectionCenter  } from "styled/Section";
 import { device } from "../themes/mediaQueries"
+import PropTypes from "prop-types"
 
 const BlogsWrapper = styled(SectionCenter)`
   @media ${device.mobileM} {
@@ -29,15 +30,17 @@ export const Blogs = ({blogs, title, showLink}) => {
       </BlogsWrapper>
       {
         showLink &&
-        <Button
-          as={Link}
-          to="/blog"
-          centerbtn="true"
-        >
+        <Button as={Link} to="/blog" centerbtn="true">
           blog
         </Button>
       }
     </Section>
   )
+}
+
+Blogs.propTypes = {
+  blogs: PropTypes.arrayOf(PropTypes.object).isRequired,
+  title: PropTypes.string.isRequired,
+  showLink: PropTypes.bool,
 }
 export default Blogs

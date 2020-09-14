@@ -260,16 +260,16 @@ Navbar
   color: var(--clr-primary-2);
 } */
 
-.nav-links {
+/* .nav-links {
   display: none;
-}
+} */
 
-@media screen and (min-width: 768px) {
+/* @media screen and (min-width: 768px) { */
   /* .toggle-btn {
     display: none;
   } */
 
-  .nav-links {
+  /* .nav-links {
     display: flex;
     justify-content: flex-end;
   }
@@ -290,14 +290,14 @@ Navbar
   .nav-links a:hover {
     color: var(--clr-primary-5);
     box-shadow: 0px 2px var(--clr-primary-5);
-  }
+  } */
 
   /* .nav-center {
     display: grid;
     grid-template-columns: auto 1fr;
     align-items: center;
   } */
-}
+/* } */
 
 /* @media screen and (min-width: 992px) {
   .navbar {
@@ -310,7 +310,7 @@ Navbar
 Sidebar
 ===============
 */
-.sidebar {
+/* .sidebar {
   background: var(--clr-grey-10);
   position: fixed;
   top: 0;
@@ -328,9 +328,9 @@ Sidebar
 .show-sidebar {
   opacity: 1;
   transform: translateX(0);
-}
+} */
 
-.sidebar-links li {
+/* .sidebar-links li {
   opacity: 0;
 }
 
@@ -349,7 +349,7 @@ Sidebar
 .sidebar-links li a:hover {
   background: var(--clr-primary-9);
   color: var(--clr-primary-5);
-}
+} */
 
 .close-btn {
   position: absolute;
@@ -360,27 +360,26 @@ Sidebar
   border-color: transparent;
   color: var(--clr-red-dark);
   cursor: pointer;
-}
+} */
 
-@media screen and (min-width: 992px) {
+/* @media screen and (min-width: 992px) {
   .sidebar {
     transform: translateX(-100%);
   }
-}
+} */
 
 /*
 ===============
 Sidebar Animation
 ===============
 */
-.sidebar-links li {
+/* .sidebar-links li {
   animation: slideRight 0.5s ease-in-out 0.3s forwards;
 }
 
 .sidebar-links li:nth-of-type(1) {
   animation-delay: 0.25s;
 }
-
 .sidebar-links li:nth-of-type(2) {
   animation-delay: 0.5s;
 }
@@ -395,9 +394,9 @@ Sidebar Animation
 
 .sidebar-links li:nth-of-type(5) {
   animation-delay: 1.25s;
-}
+} */
 
-@keyframes slideRight {
+/* @keyframes slideRight {
   0% {
     transform: translateX(-200px);
     opacity: 0;
@@ -407,9 +406,9 @@ Sidebar Animation
     transform: translateX(0);
     opacity: 1;
   }
-}
+} */
 
-.sidebar-icons li {
+/* .sidebar-icons li {
   opacity: 0;
   animation: slideUp 0.5s ease-in-out 0.3s forwards;
 }
@@ -432,9 +431,9 @@ Sidebar Animation
 
 .sidebar-icons li:nth-of-type(5) {
   animation-delay: 1.25s;
-}
+} */
 
-@keyframes slideUp {
+/* @keyframes slideUp {
   0% {
     transform: translateY(200px);
     opacity: 0;
@@ -444,7 +443,7 @@ Sidebar Animation
     transform: translateY(0);
     opacity: 1;
   }
-}
+} */
 
 /*
 ===============
@@ -639,9 +638,9 @@ Jobs
   box-shadow: 0 2px var(--clr-primary-5);
 } */
 
-.job-info {
+/* .job-info { */
   /* min-height: 420px; */
-}
+/* } */
 
 /* .job-info h3 {
   font-weight: 400;
@@ -936,7 +935,7 @@ Blog
 Footer
 ===============
 */
-.footer {
+/* .footer {
   height: 9rem;
   background: #222;
   text-align: center;
@@ -965,7 +964,7 @@ Footer
 
 .footer .social-link:hover {
   color: var(--clr-primary-5);
-}
+} */
 
 /*
 ===============

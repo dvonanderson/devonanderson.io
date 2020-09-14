@@ -6,7 +6,8 @@ import styled from "styled-components"
 import { device } from "themes/mediaQueries"
 import { Section } from "styled/Section"
 import { FaAngleDoubleRight } from "react-icons/fa"
-import { JobButton, Button } from "../styled/Button"
+import {Button} from "styled/Button"
+import { JobButton } from "styled/JobButton"
 
 const StyledSection = styled(Section)``
 
@@ -27,6 +28,7 @@ const ButtonContainer = styled.div`
   flex-direction: row;
   justify-content: center;
   margin-bottom: 4rem;
+
   @media ${device.laptop} {
     flex-direction: column;
     justify-content: flex-start;
@@ -84,8 +86,6 @@ const query = graphql`
   }
 `
 
-const JobsCenterButton = Button.withComponent(Link)
-
 const Jobs = () => {
   const data = useStaticQuery(query)
   //alias your node
@@ -128,11 +128,7 @@ const Jobs = () => {
           }
         </JobArticle>
       </JobsContainer>
-      <Button
-        as={Link}
-        to="/about"
-        centerbtn="true"
-      >
+      <Button as={Link} to="/about" centerbtn="true">
         more info
       </Button>
     </StyledSection>

@@ -134,11 +134,11 @@ const ShareSquare = styled(FaShareSquare)`
 const Project = ({description, github, title, url, stack, image, index}) => {
   return (
     <ProjectArticle>
-      <ProjectImage fluid={image.childImageSharp.fluid} />
+      {image && (<ProjectImage fluid={image.childImageSharp.fluid} />)}
       <ProjectInfoContainer>
         <Span>0{index + 1}.</Span>
         <h3>{title}</h3>
-        <ProjectDescription>{description}</ProjectDescription>
+        <ProjectDescription>{description || "default description"}</ProjectDescription>
         <ProjectStack>
           {
             stack.map(item =>

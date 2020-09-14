@@ -1,6 +1,6 @@
-import {device} from "themes/mediaQueries"
-
+import styled, {keyframes} from 'styled-components'
 // Darker shades of primary
+
 // export const primary1 = "hsl(43, 86%, 17%)";
 export const primary1 = "hsl(184, 91%, 17%)";
 export const primary2 = "hsl(185, 84%, 25%)";
@@ -36,7 +36,28 @@ export const secondary = "Open Sans";
 
 //Animation
 export const transition = "all 0.3s linear";
+export const slideRight = keyframes`
+  0% {
+    transform: translateX(-200px);
+    opacity: 0;
+  }
 
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+`
+export const slideUp = keyframes`
+  0% {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+`
 
 //Spacing
 export const spacing = "0.25rem";

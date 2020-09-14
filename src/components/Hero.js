@@ -7,7 +7,7 @@ import { SectionCenter } from 'styled/Section'
 import { Underline } from "styled/Underline"
 import Image from "gatsby-image"
 
-export const HeroHeader = styled.header`
+const HeroHeader = styled.header`
   margin-top: -5rem;
   padding-top: 5rem;
   height: 100vh;
@@ -15,7 +15,7 @@ export const HeroHeader = styled.header`
   position: relative;
 
   @media ${device.laptop} {
-    &:before {
+    & :before {
       content: "";
       position: absolute;
       top: 0;
@@ -27,7 +27,7 @@ export const HeroHeader = styled.header`
   }
 `
 
-export const HeroContainer = styled(SectionCenter)`
+const HeroSection = styled(SectionCenter)`
   height: 70%;
   display: grid;
   align-items: center;
@@ -37,9 +37,9 @@ export const HeroContainer = styled(SectionCenter)`
   }
 `
 
-export const Article = styled.article`
+const Article = styled.article`
   @media ${device.laptop} {
-    grid-row: 1/1;
+    grid-row: 1 / 1;
     grid-column: 1 / span 8;
   }
 
@@ -50,12 +50,12 @@ export const Article = styled.article`
 
 `
 
-export const HeroUnderline = styled(Underline)`
+const HeroUnderline = styled(Underline)`
   margin-bottom: 0.5rem;
   margin-left: 0px;
 `
 
-export const H4 = styled.h4`
+const H4 = styled.h4`
   color: ${props => props.theme.primary5};
 
   @media ${device.laptop} {
@@ -68,7 +68,7 @@ export const H4 = styled.h4`
   }
  `
 
- export const StyledImage = styled(Image)`
+ const StyledImage = styled(Image)`
   display: none;
 
   @media ${device.laptop} {
@@ -90,6 +90,8 @@ const query = graphql`
   }
 `
 
+
+
 const Hero = () => {
   const {
     file: {
@@ -99,7 +101,7 @@ const Hero = () => {
 
   return (
     <HeroHeader>
-      <HeroContainer>
+      <HeroSection>
         <Article>
           <div>
             <HeroUnderline />
@@ -109,7 +111,7 @@ const Hero = () => {
           </div>
         </Article>
         <StyledImage fluid={fluid} alt="image of devon"/>
-      </HeroContainer>
+      </HeroSection>
     </HeroHeader>
   )
 }

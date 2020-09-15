@@ -1,25 +1,3 @@
-/*
-===============
-Fonts
-===============
-*/
-/* @import url("https://fonts.googleapis.com/css?family=Open+Sans|Roboto:400,700&display=swap"); */
-
-
-.projects {
-  background: var(--clr-grey-10);
-}
-
-.blog article {
-  height: 100%;
-  display: grid;
-  grid-template-rows: auto 1fr;
-}
-
-.blog-page .blog {
-  background: var(--clr-white);
-}
-
 
 .stack-container {
   width: 30rem;

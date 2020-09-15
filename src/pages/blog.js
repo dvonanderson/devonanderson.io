@@ -6,6 +6,8 @@ import styled from "styled-components"
 
 const AllBlogsSection = styled.section`
   ${props => props.theme.pagesStyling};
+
+  background: ${props => props.theme.white}
 `
 const Blog = ({
   data: {

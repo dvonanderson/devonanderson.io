@@ -4,6 +4,7 @@ import ReactMarkdown from "react-markdown"
 import {SectionCenter} from "styled/Section"
 import BlogButton from "styled/Button"
 import styled from "styled-components"
+import SEO from "../components/SEO"
 
 const BlogTemplateSection = styled.section`
   padding: 5rem 0;
@@ -50,22 +51,28 @@ const BlogTemplateSection = styled.section`
 `
 
 const BlogTemplate = ({data}) => {
-  const  { content } = data.blog
+  const  { content, title, description } = data.blog
   return (
-    <BlogTemplateSection>
-      <SectionCenter >
-        <article className="blog-content">
-          <ReactMarkdown source={content} />
-        </article>
-        <BlogButton as={Link} to="/blog" centerBtn="true">blog</BlogButton>
-      </SectionCenter>
-    </BlogTemplateSection>
+    <>
+      <SEO title={title} description={description}/>
+      <BlogTemplateSection>
+        <SectionCenter >
+          <article className="blog-content">
+            <ReactMarkdown source={content} />
+          </article>
+          <BlogButton as={Link} to="/blog" centerBtn="true">blog</BlogButton>
+        </SectionCenter>
+      </BlogTemplateSection>
+    </>
+
   )
 }
 export const query = graphql`
   query GetSingleBlog($slug: String) {
     blog: strapiBlogs(slug: { eq: $slug }) {
       content
+      title
+      description
     }
   }
 `

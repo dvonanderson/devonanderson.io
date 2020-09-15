@@ -5,6 +5,7 @@ import Services from "components/Services"
 import Jobs from "components/Jobs"
 import Projects from "components/Projects"
 import Blogs from "components/Blogs"
+import SEO from "../components/SEO"
 
 export default ({data}) => {
   const {
@@ -14,6 +15,7 @@ export default ({data}) => {
 
   return (
     <>
+      <SEO title="Home" description="devon anderson home page"/>
       <Hero />
       <Services />
       <Jobs />

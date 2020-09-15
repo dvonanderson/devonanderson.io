@@ -6,6 +6,7 @@ import styled from "styled-components"
 import { SectionCenter } from "styled/Section"
 import AboutStack from "styled/StackSpan"
 import { device } from "../themes/mediaQueries"
+import SEO from "../components/SEO"
 
 const AboutSection = styled.section`
   ${props => props.theme.pagesStyling};
@@ -45,20 +46,24 @@ const About = ({ data: { about: {nodes}}}) => {
   const { info, stack, title, image } = nodes[0];
 
   return (
-    <AboutSection>
-      <AboutContainer>
-        <AboutImage fluid={image.childImageSharp.fluid} alt="devon headshot" />
-        <AboutArticle>
-          <Title aboutTitle="true" title={title} aboutUnderline="true"/>
-          <p>{info}</p>
-          <div>
-            {
-              stack.map(item => <AboutStack aboutStack="true" key={item.id}>{item.title}</AboutStack>)
-            }
-          </div>
-        </AboutArticle>
-      </AboutContainer>
-    </AboutSection>
+    <>
+      <SEO title="About" description="about devon anderson"/>
+      <AboutSection>
+        <AboutContainer>
+          <AboutImage fluid={image.childImageSharp.fluid} alt="devon headshot" />
+          <AboutArticle>
+            <Title aboutTitle="true" title={title} aboutUnderline="true"/>
+            <p>{info}</p>
+            <div>
+              {
+                stack.map(item => <AboutStack aboutStack="true" key={item.id}>{item.title}</AboutStack>)
+              }
+            </div>
+          </AboutArticle>
+        </AboutContainer>
+      </AboutSection>
+    </>
+
   )
 }
 

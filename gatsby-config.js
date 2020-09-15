@@ -11,7 +11,7 @@ module.exports = {
     author: "Devon Anderson",
     twitterUsername: "@dsawebdev",
     image: "/buck_eye-logo.png",
-    siteUrl: "https://devonanderson.net",
+    siteUrl: "https://www.devonanderson.net",
   },
   plugins: [
     `gatsby-transformer-sharp`,

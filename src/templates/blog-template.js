@@ -3,7 +3,7 @@ import { graphql, Link } from "gatsby"
 import Layout from "../components/Layout"
 import ReactMarkdown from "react-markdown"
 import {SectionCenter} from "styled/Section"
-import { Button } from "styled/Button"
+import BlogButton from "styled/Button"
 import styled from "styled-components"
 
 const BlogTemplateSection = styled.section`
@@ -50,8 +50,6 @@ const BlogTemplateSection = styled.section`
   }
 `
 
-const BlogContentSection = styled.section``
-
 const BlogTemplate = ({data}) => {
   const  { content } = data.blog
   return (
@@ -61,7 +59,7 @@ const BlogTemplate = ({data}) => {
           <article className="blog-content">
             <ReactMarkdown source={content} />
           </article>
-          <Button as={Link} to="/blog" centerbtn="true">blog</Button>
+          <BlogButton as={Link} to="/blog" centerBtn="true">blog</BlogButton>
         </SectionCenter>
       </BlogTemplateSection>
     </Layout>

@@ -2,7 +2,7 @@ import React from "react"
 import Title from "./Title"
 import Blog from "./Blog"
 import { Link } from "gatsby"
-import { Button } from "styled/Button"
+import BlogButton from "styled/Button"
 import styled from "styled-components"
 import { Section, SectionCenter  } from "styled/Section";
 import { device } from "../themes/mediaQueries"
@@ -30,9 +30,9 @@ export const Blogs = ({blogs, title, showLink}) => {
       </BlogsWrapper>
       {
         showLink &&
-        <Button as={Link} to="/blog" centerbtn="true">
+        <BlogButton as={Link} to="/blog" centerBtn="true">
           blog
-        </Button>
+        </BlogButton>
       }
     </Section>
   )

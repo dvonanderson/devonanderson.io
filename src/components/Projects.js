@@ -4,12 +4,13 @@ import Project from "./Project"
 import { Link } from "gatsby"
 import { Section, SectionCenter } from "styled/Section";
 import styled from "styled-components"
-import {Button} from "styled/Button";
+import Button from "styled/Button";
 import PropTypes from "prop-types"
 
 const ProjectsSection = styled(Section)`
   background: ${props => props.theme.grey10};
 `
+
 const Projects = ({projects, title, showLink}) => {
   return (
     <ProjectsSection>
@@ -25,7 +26,7 @@ const Projects = ({projects, title, showLink}) => {
       </SectionCenter>
       {
         showLink && (
-          <Button as={Link} to="/projects" centerbtn="true">
+          <Button as={Link} to="/projects" centerBtn="true">
             projects
           </Button>
         )

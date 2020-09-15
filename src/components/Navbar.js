@@ -86,7 +86,7 @@ const Navbar = ({ toggleSidebar }) => {
 
     document.addEventListener('scroll', handleScroll, {passive: true})
 
-    return () => document.removeEventListener('scroll', handleScroll)
+    return () => {document.removeEventListener('scroll', handleScroll)}
 
   }, [scrolled])
 

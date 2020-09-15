@@ -106,7 +106,9 @@ export default ({footer, sidebar}) => {
         data.map(link => {
           return (
             <li key={link.id}>
-              <a href={link.url} target="_blank">
+              <a href={link.url}
+              target = "_blank"
+              rel="noreferrer noopener">
                 {link.icon}
               </a>
             </li>

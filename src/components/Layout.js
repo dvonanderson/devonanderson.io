@@ -9,7 +9,6 @@ const Layout = ({ children }) => {
   const toggleSidebar = () => {
     setIsOpen(!isOpen)
   }
-
   return (
     <>
       <Navbar toggleSidebar={toggleSidebar} />

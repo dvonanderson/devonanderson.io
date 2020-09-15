@@ -22,12 +22,16 @@ const ErrorMain = styled.main`
 `
 const Error = () => {
   return (
-    <ErrorMain>
-      <div className="error-container">
-        <h1>oops page doesn't exist</h1>
-        <Button as={Link} to="/">back to home</Button>
-      </div>
-    </ErrorMain>
+    <>
+      <SEO title="Error" description="portfolio 404 error page"/>
+      <ErrorMain>
+        <div className="error-container">
+          <h1>oops page doesn't exist</h1>
+          <Button as={Link} to="/">back to home</Button>
+        </div>
+      </ErrorMain>
+    </>
+
   )
 }
 

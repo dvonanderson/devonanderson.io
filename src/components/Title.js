@@ -2,7 +2,6 @@ import React from "react"
 import styled, { css } from "styled-components"
 import PropTypes from "prop-types"
 import Underline from "styled/Underline"
-import { device } from "themes/mediaQueries"
 
 const SectionTitle = styled.div`
   margin-bottom: 4rem;

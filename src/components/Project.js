@@ -1,6 +1,6 @@
 import React from "react"
 import PropTypes from "prop-types"
-import styled, {css} from "styled-components"
+import styled from "styled-components"
 import { device } from "themes/mediaQueries";
 import Image from "gatsby-image"
 import ProjectStackSpan from "styled/StackSpan"

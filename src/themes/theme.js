@@ -59,6 +59,15 @@ export const slideUp = keyframes`
   }
 `
 
+export const moveDown = keyframes`
+  from {
+    transform: translateY(-5rem);
+  }
+  to {
+    transform: translateY(0rem);
+  }
+`
+
 //Spacing
 export const spacing = "0.25rem";
 

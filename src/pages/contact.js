@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/Layout"
 import styled, { css } from "styled-components"
 import Button from "styled/Button"
 
@@ -52,21 +51,19 @@ const ContactFormControl = styled.div`
 `
 const contact = () => {
   return (
-    <Layout>
-      <ContactSection>
-        <ContactForm>
-          <h3>get in touch</h3>
-          <form action="https://formspree.io/myybgjvw" method="POST">
-            <ContactFormGroup>
-              <ContactFormControl as="input" type="text" placeholder="name" name="name"/>
-              <ContactFormControl as="input" type="email" placeholder="email" name="email"/>
-              <ContactFormControl as="textarea" name="message" placeholder="message" row="5"></ContactFormControl>
-            </ContactFormGroup>
-            <Button type="submit" submitBtn="true">submit</Button>
-          </form>
-        </ContactForm>
-      </ContactSection>
-    </Layout>
+    <ContactSection>
+      <ContactForm>
+        <h3>get in touch</h3>
+        <form action="https://formspree.io/myybgjvw" method="POST">
+          <ContactFormGroup>
+            <ContactFormControl as="input" type="text" placeholder="name" name="name"/>
+            <ContactFormControl as="input" type="email" placeholder="email" name="email"/>
+            <ContactFormControl as="textarea" name="message" placeholder="message" row="5"></ContactFormControl>
+          </ContactFormGroup>
+          <Button type="submit" submitBtn="true">submit</Button>
+        </form>
+      </ContactForm>
+    </ContactSection>
   )
 }
 

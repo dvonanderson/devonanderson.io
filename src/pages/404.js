@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/Layout"
 import { Link } from "gatsby"
 import { Button } from "../styled/Button"
 import SEO from "../components/SEO"
@@ -23,14 +22,12 @@ const ErrorMain = styled.main`
 `
 const Error = () => {
   return (
-    <Layout>
-      <ErrorMain>
-        <div className="error-container">
-          <h1>oops page doesn't exist</h1>
-          <Button as={Link} to="/">back to home</Button>
-        </div>
-      </ErrorMain>
-    </Layout>
+    <ErrorMain>
+      <div className="error-container">
+        <h1>oops page doesn't exist</h1>
+        <Button as={Link} to="/">back to home</Button>
+      </div>
+    </ErrorMain>
   )
 }
 

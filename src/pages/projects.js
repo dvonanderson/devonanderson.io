@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "components/Layout"
 import { graphql } from "gatsby"
 import Projects from "components/Projects"
 import styled from "styled-components"
@@ -13,11 +12,9 @@ const ProjectsPage = ({
   }}
 }) => {
   return (
-    <Layout>
-      <AllProjectsSection>
-        <Projects projects={projects} title="all projects" />
-      </AllProjectsSection>
-    </Layout>
+    <AllProjectsSection>
+      <Projects projects={projects} title="all projects" />
+    </AllProjectsSection>
   )
 }
 

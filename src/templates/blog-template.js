@@ -1,6 +1,5 @@
 import React from "react"
 import { graphql, Link } from "gatsby"
-import Layout from "../components/Layout"
 import ReactMarkdown from "react-markdown"
 import {SectionCenter} from "styled/Section"
 import BlogButton from "styled/Button"
@@ -53,16 +52,14 @@ const BlogTemplateSection = styled.section`
 const BlogTemplate = ({data}) => {
   const  { content } = data.blog
   return (
-    <Layout>
-      <BlogTemplateSection>
-        <SectionCenter >
-          <article className="blog-content">
-            <ReactMarkdown source={content} />
-          </article>
-          <BlogButton as={Link} to="/blog" centerBtn="true">blog</BlogButton>
-        </SectionCenter>
-      </BlogTemplateSection>
-    </Layout>
+    <BlogTemplateSection>
+      <SectionCenter >
+        <article className="blog-content">
+          <ReactMarkdown source={content} />
+        </article>
+        <BlogButton as={Link} to="/blog" centerBtn="true">blog</BlogButton>
+      </SectionCenter>
+    </BlogTemplateSection>
   )
 }
 export const query = graphql`

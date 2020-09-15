@@ -90,6 +90,14 @@ export const projectIcon = css`
   }
 `
 
+export const headingStyling = css`
+  letter-spacing: ${spacing};
+  text-transform: capitalize;
+  line-height: 1.25;
+  margin-bottom: 0.75rem;
+  font-family: ${primary};
+`
+
 //Service Icons
 export const serviceIcons = css`
   font-size: 2rem;

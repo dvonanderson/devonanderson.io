@@ -1,26 +1,9 @@
 import { createGlobalStyle } from "styled-components"
-import { pagesDefaultStyes, headingDefaultStyles } from "themes/mixins";
 import { device } from "themes/mediaQueries"
+import reset from "styled-reset"
 
-const GlobalStyles = createGlobalStyle`
-/*
-===============
-Global Styles
-===============
-*/
-  * {
-    &:after{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    &:before{
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-  }
+export const GlobalStyles = createGlobalStyle`
+ ${reset}
 
   body {
     font-family: ${props => props.theme.secondary}, sans-serif;
@@ -44,7 +27,7 @@ Global Styles
   }
 
   h1, h2, h3, h4 {
-    ${headingDefaultStyles};
+    ${props => props.theme.headingStyling};
 
     @media ${device.tabletM} {
       line-height: 1;
@@ -83,34 +66,4 @@ Global Styles
     margin-bottom: 1.25rem;
     color: ${props => props.theme.grey3};
   }
-
-  /*
-
-
-  /*
-  ===============
-  Pages
-  ===============
-  */
-  .blog-template {
-    ${pagesDefaultStyes};
-  }
-  .projects-page {
-    ${pagesDefaultStyes};
-  }
-  .blog-page {
-    ${pagesDefaultStyes};
-  }
-  .error-page {
-    ${pagesDefaultStyes};
-  }
-  .about-page {
-    ${pagesDefaultStyes};
-  }
-  .contact-page {
-    ${pagesDefaultStyes};
-  }
 `
-
-
-export default GlobalStyles;

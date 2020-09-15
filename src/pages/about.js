@@ -1,5 +1,4 @@
 import React from "react"
-import Layout from "../components/Layout"
 import { graphql } from "gatsby"
 import Title from "../components/Title"
 import Image from "gatsby-image"
@@ -46,22 +45,20 @@ const About = ({ data: { about: {nodes}}}) => {
   const { info, stack, title, image } = nodes[0];
 
   return (
-    <Layout>
-      <AboutSection>
-        <AboutContainer>
-          <AboutImage fluid={image.childImageSharp.fluid} alt="devon headshot" />
-          <AboutArticle>
-            <Title aboutTitle="true" title={title} aboutUnderline="true"/>
-            <p>{info}</p>
-            <div>
-              {
-                stack.map(item => <AboutStack aboutStack="true" key={item.id}>{item.title}</AboutStack>)
-              }
-            </div>
-          </AboutArticle>
-        </AboutContainer>
-      </AboutSection>
-    </Layout>
+    <AboutSection>
+      <AboutContainer>
+        <AboutImage fluid={image.childImageSharp.fluid} alt="devon headshot" />
+        <AboutArticle>
+          <Title aboutTitle="true" title={title} aboutUnderline="true"/>
+          <p>{info}</p>
+          <div>
+            {
+              stack.map(item => <AboutStack aboutStack="true" key={item.id}>{item.title}</AboutStack>)
+            }
+          </div>
+        </AboutArticle>
+      </AboutContainer>
+    </AboutSection>
   )
 }
 

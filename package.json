@@ -14,11 +14,10 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
-  {
+
     "engines": {
       "node": ">=10.15.3"
-    }
-  }
+    },
 
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",

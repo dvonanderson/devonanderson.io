@@ -128,7 +128,7 @@ const Jobs = () => {
           }
         </JobArticle>
       </JobsContainer>
-      <Button as={Link} to="/about" center>
+      <Button as={Link} to="/about" center="true">
         more info
       </Button>
     </StyledSection>

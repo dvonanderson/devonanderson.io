@@ -47,6 +47,16 @@ export const slideRight = keyframes`
     opacity: 1;
   }
 `
+
+export const rotate = keyframes`
+  0% {
+    transform: rotateY(360deg);
+  }
+  100% {
+    transform: rotateY(0rem);
+  }
+`
+
 export const slideUp = keyframes`
   0% {
     transform: translateY(200px);

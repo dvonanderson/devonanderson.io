@@ -30,7 +30,7 @@ export const Blogs = ({blogs, title, showLink}) => {
       </BlogsWrapper>
       {
         showLink &&
-        <Button as={Link} to="/blog" center>
+        <Button as={Link} to="/blog" center="true">
           blog
         </Button>
       }

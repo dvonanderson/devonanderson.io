@@ -26,7 +26,7 @@ const Projects = ({projects, title, showLink}) => {
       </SectionCenter>
       {
         showLink && (
-          <Button as={Link} to="/projects" center>
+          <Button as={Link} to="/projects" center="true">
             projects
           </Button>
         )

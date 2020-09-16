@@ -9,6 +9,7 @@ import { device } from "../themes/mediaQueries"
 import PropTypes from "prop-types"
 
 const BlogsWrapper = styled(SectionCenter)`
+
   @media ${device.mobileM} {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(368px, 1fr));

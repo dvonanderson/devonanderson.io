@@ -2,7 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import ReactMarkdown from "react-markdown"
 import {SectionCenter} from "styled/Section"
-import BlogButton from "styled/Button"
+import {Button} from "styled/Button"
 import styled from "styled-components"
 import SEO from "../components/SEO"
 
@@ -56,11 +56,11 @@ const BlogTemplate = ({data}) => {
     <>
       <SEO title={title} description={description}/>
       <BlogTemplateSection>
-        <SectionCenter >
-          <article className="blog-content">
+        <SectionCenter>
+          <article>
             <ReactMarkdown source={content} />
           </article>
-          <BlogButton as={Link} to="/blog" centerBtn="true">blog</BlogButton>
+          <Button as={Link} to="/blog" center="true">blog</Button>
         </SectionCenter>
       </BlogTemplateSection>
     </>

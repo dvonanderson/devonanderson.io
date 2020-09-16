@@ -6,7 +6,7 @@ import styled from "styled-components"
 import { device } from "themes/mediaQueries"
 import { Section } from "styled/Section"
 import { FaAngleDoubleRight } from "react-icons/fa"
-import {Button} from "styled/Button"
+import  {Button } from "styled/Button"
 import { JobButton } from "styled/JobButton"
 
 const StyledSection = styled(Section)``

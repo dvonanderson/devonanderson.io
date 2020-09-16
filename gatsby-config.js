@@ -4,12 +4,17 @@
  * See: https://www.gatsbyjs.org/docs/gatsby-config/
  */
 
+ require("dotenv").config({
+   path: `.env.${process.env.NODE_ENV}`,
+ })
+
 module.exports = {
   siteMetadata: {
     title: "Devon Anderson Portfolio",
     description: "This is Devon Anderson Portfolio Site",
     author: "Devon Anderson",
     twitterUsername: "@dsawebdev",
+    //todo: put in a correct twitter image
     image: "/buck_eye-logo.png",
     siteUrl: "https://www.devonanderson.net",
   },
@@ -29,7 +34,7 @@ module.exports = {
     {
       resolve: `gatsby-source-strapi`,
       options: {
-        apiURL: `https://devonanderson-io-api.herokuapp.com/`,
+        apiURL: process.env.API_URL || "https://localhost:1337",
         queryLimit: 1000, // Default to 100
         contentTypes: [`jobs`, `projects`, `blogs`],
         singleTypes: [`about`],

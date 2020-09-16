@@ -1,7 +1,7 @@
 import React from 'react'
 import styled, { css } from "styled-components"
 
-const Button = styled.button`
+export const Button = styled.button`
   text-transform: uppercase;
   background: ${props => props.theme.primary5};
   color: ${props => props.theme.primary9};
@@ -22,19 +22,7 @@ const Button = styled.button`
   }
 
   ${props =>
-    props.submitBtn && css`
-      display: block;
-      width: 100%;
-      padding: 1rem;
-      border-bottom-left-radius: ${props => props.theme.radius};
-      border-bottom-left-radius: ${props => props.theme.radius};
-      border-top-right-radius: 0;
-      border-top-left-radius: 0;
-    `
-  }
-
-  ${props =>
-    props.centerBtn && css `
+    props.center && css `
       display: block;
       width: 12rem;
       text-align: center;
@@ -43,7 +31,3 @@ const Button = styled.button`
     `
   }
 `
-
-export default ({ children, centerBtn, submitBtn }) => {
-  return <Button centerBtn={centerBtn} submitBtn={submitBtn}>{children}</Button>
-}

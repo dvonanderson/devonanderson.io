@@ -1,6 +1,6 @@
 import React from "react"
 import styled from "styled-components"
-import Button from "styled/Button"
+import {Button} from "styled/Button"
 
 const ContactSection = styled.div`
   ${props => props.theme.pagesStyling};
@@ -49,6 +49,17 @@ const ContactFormControl = styled.div`
     letter-spacing: ${props => props.theme.spacing};
   }
 `
+
+const SubmitButton = styled(Button)`
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  border-bottom-left-radius: ${props => props.theme.radius};
+  border-bottom-left-radius: ${props => props.theme.radius};
+  border-top-right-radius: 0;
+  border-top-left-radius: 0;
+`
+
 const contact = () => {
   return (
     <ContactSection>
@@ -60,7 +71,7 @@ const contact = () => {
             <ContactFormControl as="input" type="email" placeholder="email" name="email"/>
             <ContactFormControl as="textarea" name="message" placeholder="message" row="5"></ContactFormControl>
           </ContactFormGroup>
-          <Button type="submit" submitBtn="true">submit</Button>
+          <SubmitButton type="submit">submit</SubmitButton>
         </form>
       </ContactForm>
     </ContactSection>

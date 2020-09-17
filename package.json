@@ -14,10 +14,6 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
-   "engines": {
-     "node": "10.x",
-     "npm": ">= 6.0.0"
-   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",
     "gatsby": "^2.21.0",

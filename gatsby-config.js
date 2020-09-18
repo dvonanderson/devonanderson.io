@@ -1,12 +1,6 @@
-/**
- * Configure your Gatsby site with this file.
- *
- * See: https://www.gatsbyjs.org/docs/gatsby-config/
- */
-
- require("dotenv").config({
-   path: `.env.${process.env.NODE_ENV}`
- })
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`
+})
 
 module.exports = {
   siteMetadata: {
@@ -14,8 +8,7 @@ module.exports = {
     description: "This is Devon Anderson Portfolio Site",
     author: "Devon Anderson",
     twitterUsername: "@dsawebdev",
-    //todo: put in a correct twitter image
-    image: "/buck_eye-logo.png",
+    image: "/dsa_twitter_screenshot.png",
     siteUrl: "https://www.devonanderson.net",
   },
   plugins: [

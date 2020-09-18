@@ -125,10 +125,10 @@ const Project = ({description, github, title, url, stack, image, index}) => {
           }
         </ProjectStack>
         <div>
-          <a href={github} target="_blank" rel="noopener noreferrer">
+          <a href={url} target="_blank" rel="noopener noreferrer">
             <StyledShareSquare />
           </a>
-          <a href={url} target="_blank" rel="noopener noreferrer">
+          <a href={github} target="_blank" rel="noopener noreferrer">
             <StyledGithubSquare />
           </a>
         </div>

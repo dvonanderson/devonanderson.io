@@ -2,7 +2,7 @@ import styled, { css } from "styled-components"
 
 export const Button = styled.button`
   text-transform: uppercase;
-  background: ${props => props.theme.primary5};
+  background: ${props => props.theme.primary8};
   color: ${props => props.theme.primary9};
   padding: 0.375rem 0.75rem;
   letter-spacing: ${props => props.theme.spacing};
@@ -17,7 +17,8 @@ export const Button = styled.button`
 
   & :hover {
     color: ${props => props.theme.primary1};
-    background: ${props => props.theme.primary8};
+    background: ${props => props.theme.primary5};
+    filter: brightness(125%)
   }
 
   ${props =>
@@ -27,6 +28,16 @@ export const Button = styled.button`
       text-align: center;
       margin: 0 auto;
       margin-top: 3rem;
+    `
+  }
+
+  ${props =>
+      props.about && css `
+      display: block;
+      width: 15rem;
+      text-align: center;
+      margin: 0 auto;
+      margin-top: 7rem;
     `
   }
 `

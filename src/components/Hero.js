@@ -75,7 +75,7 @@ const H4 = styled.h4`
 
 const query = graphql`
   {
-    file(relativePath: {eq: "dsa_headshot_logo.png"}) {
+    file(relativePath: {eq: "dsa-headshot-hero.png"}) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -100,7 +100,7 @@ const Hero = () => {
         <Article>
           <div>
             <Underline heroUnderline="true"/>
-            <h1>Hi, I'm Devon</h1>
+            <h1>Hello, I'm Devon</h1>
             <H4>Fullstack Developer</H4>
             <SocialLinks />
           </div>

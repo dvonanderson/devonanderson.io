@@ -6,12 +6,12 @@ export const primary1 = "hsl(184, 91%, 17%)";
 export const primary2 = "hsl(185, 84%, 25%)";
 export const primary3 = "hsl(185, 81%, 29%)";
 export const primary4 = "hsl(184, 77%, 34%)";
-export const primary5 = "#2caeba";
+export const primary5 = "#0299f6";
 
 // Lighter shades of primary
 export const primary6 = "hsl(185, 57%, 50%)";
 export const primary7 = "hsl(184, 65%, 59%)";
-export const primary8 = "hsl(184, 80%, 74%)";
+export const primary8 = "#0889e2";
 export const primary9 = "hsl(185, 94%, 87%)";
 export const primary10 = "hsl(186, 100%, 94%)";
 

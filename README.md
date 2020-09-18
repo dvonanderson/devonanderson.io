@@ -10,4 +10,8 @@
   🚀 **dvonanderson@gmail.com**
 
   # Tech used
+  - [Gastby.js](https://www.gatsbyjs.com/)
+  - [Strapi](https://strapi.io/)
+  - [Heroku](https://www.heroku.com/home)
+  - [Netlify](https://www.netlify.com/) 
 

@@ -15,6 +15,7 @@ export default ({data}) => {
 
   return (
     <>
+
       <SEO title="Home" description="devon anderson home page"/>
       <Hero />
       <Services />

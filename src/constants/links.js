@@ -102,13 +102,13 @@ const data = [
   },
 ]
 
-export default ({sidebar}) => {
+export default ({sidebar, toggleSidebar}) => {
   return (
     <StyledLinks sidebar={sidebar}>
       {
         data.map(link => {
           return (
-            <li key={link.id}>
+            <li key={link.id} onClick={toggleSidebar}>
               <Link to={link.url}>{link.text}</Link>
             </li>
           )

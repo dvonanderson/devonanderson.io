@@ -43,7 +43,7 @@ const Sidebar = ({isOpen, toggleSidebar,}) => {
         <FaTimes />
       </CloseButton>
       <div>
-        <PageLinks sidebar={isOpen}/>
+        <PageLinks sidebar={isOpen} toggleSidebar={toggleSidebar}/>
         <SocialLinks sidebar={isOpen}/>
       </div>
     </SidebarAside>

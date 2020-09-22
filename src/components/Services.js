@@ -29,7 +29,7 @@ const ServiceContainer = styled.div`
   }
 `
 
-const ServiceArticle = styled.article`
+export const ServiceArticle = styled.article`
   background: ${props => props.theme.white};
   padding: 3rem 1.5rem;
   margin-bottom: 2rem;
@@ -66,7 +66,7 @@ const Services = () => {
                 <ServiceArticle key={id}>
                   {icon}
                   <h4>{title}</h4>
-                  <Underline serviceUnderline="true"/>
+                  <Underline serviceUnderline="true" serviceArticle={ServiceArticle}/>
                   <p>{text}</p>
                 </ServiceArticle>
               )

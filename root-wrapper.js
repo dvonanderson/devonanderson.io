@@ -21,7 +21,6 @@ export const wrapRootElement = ({element}) => (
       debug={true}
       location="bottom"
       buttonText="Got it"
-      cookieName = "gatsby-gdpr-google-analytics"
     >
       <h4>Cookie Consent</h4>
       This website uses cookies that help the website function and to help us understand how to interact with it.  We use These cookies to provide you with improved and customized user-experience.  To find out more about the cookies we use, see our Privacy Policy.

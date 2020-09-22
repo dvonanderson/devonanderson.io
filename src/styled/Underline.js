@@ -27,16 +27,10 @@ const Underline = styled.div`
     props.serviceUnderline && css`
       width: 3rem;
       height: 0.12rem;
-      -webkit-transition: ${props => props.theme.transition};
-      transition: ${props => props.theme.transition};
-
-      & :hover {
-        background: ${props => props.theme.primary9};
-      }
     `
   }
 `
-export default ({ aboutUnderline, heroUnderline, serviceUnderline}) => {
+export default ({ props, aboutUnderline, heroUnderline, serviceUnderline}) => {
   return  (
     <Underline
       aboutUnderline={aboutUnderline}

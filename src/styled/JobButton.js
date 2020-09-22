@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled, {css} from "styled-components"
 import {device} from "themes/mediaQueries"
 
 export const JobButton = styled.button `
@@ -13,10 +13,12 @@ export const JobButton = styled.button `
   padding: 0.25rem 0;
   line-height: 1;
 
-  /* active button styling --start*/
-  color: ${props => props.activeBtn ? props.primary5 :  ""};
-  box-shadow: ${props => props.activeBtn ? props.primary5 : ""};
-  /* active button styling --end*/
+  ${props =>
+    props.activeBtn && css`
+      color: ${props => props.theme.primary5};
+      box-shadow: ${props => props.theme.primary5};
+    `
+  }
 
   &:hover {
     color: ${props => props.theme.primary5};

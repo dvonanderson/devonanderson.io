@@ -38,7 +38,24 @@ const HeroSection = styled(SectionCenter)`
 `
 
 const Article = styled.article`
+  text-align: center;
+  & h1 {
+    font-size: 2.5rem;
+  }
+  @media ${device.tabletS} {
+    & h1 {
+      font-size: 3rem;
+    }
+  }
+
+  @media ${device.tabletM} {
+    text-align: left;
+  }
+
   @media ${device.laptop} {
+    & h1 {
+      font-size: 4.25rem;
+    }
     grid-row: 1 / 1;
     grid-column: 1 / span 8;
   }
@@ -53,12 +70,15 @@ const Article = styled.article`
 const H4 = styled.h4`
   color: ${props => props.theme.primary5};
 
+  @media ${device.tabletS} {
+    font-size: 1rem;
+  }
   @media ${device.laptop} {
     font-size: 0.85rem;
   }
 
   @media ${device.desktop} {
-    font-size: 1rem;
+    font-size: 1.75rem;
     line-height: 1;
   }
  `

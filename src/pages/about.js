@@ -12,7 +12,12 @@ import { Button } from "styled/Button"
 
 const AboutSection = styled.section`
   ${props => props.theme.pagesStyling};
-  padding: 7rem 0;
+  padding: 1rem 0;
+
+  @media ${device.laptop} {
+    padding: 7rem 0;
+  }
+
 `
 
 const AboutContainer = styled(SectionCenter)`
@@ -25,12 +30,17 @@ const AboutContainer = styled(SectionCenter)`
 `
 
 const AboutImage = styled(Image)`
+  margin: 0 auto;
   margin-bottom: 2rem;
-  height: 25rem;
+  width: 15rem;
+  height: 20rem;
+
 
   @media ${device.laptop} {
     grid-column: 1 / span 4;
     margin-bottom: 0;
+    width: 100%;
+    height: 25rem;
   }
 `
 

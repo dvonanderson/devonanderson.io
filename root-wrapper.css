@@ -1,13 +1,19 @@
 .containerClass {
-  background: #222;
-  color: white;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  left: 0;
-  position: fixed;
-  height: 9rem;
-  width: 100%;
-  z-index: 999;
+  display: none;
+}
+
+@media sreen and (min-width: 768px) {
+  .containerClass{
+    background: #222;
+    color: white;
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    left: 0;
+    position: fixed;
+    height: 9rem;
+    width: 100%;
+    z-index: 999;
+  }
 }
 
 .contentClass {

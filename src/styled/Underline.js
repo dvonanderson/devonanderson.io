@@ -1,5 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
+import { device } from '../themes/mediaQueries'
 
 const Underline = styled.div`
   width: 5rem;
@@ -18,8 +19,13 @@ const Underline = styled.div`
 
   ${props =>
     props.heroUnderline && css`
-      margin-bottom: 0.5rem;
-      margin-left: 0px;
+      margin: 0 auto;
+      margin-bottom: 0.25rem;
+      @media ${device.laptop} {
+        margin-bottom: 0.5rem;
+        margin-left: 0px;
+      }
+
     `
   }
 

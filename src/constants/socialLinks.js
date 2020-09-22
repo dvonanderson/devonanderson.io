@@ -7,6 +7,7 @@ import {
   FaTwitterSquare,
 } from "react-icons/fa"
 import styled, {css} from "styled-components"
+import { device } from "../themes/mediaQueries"
 
 const data = [
   {
@@ -37,11 +38,18 @@ const data = [
 ]
 
 const SocialLinks = styled.ul`
+  margin: 0 auto;
   margin-top: 2rem;
   width: 15rem;
   display: flex;
   justify-content: space-between;
-  justify-items: flex-start;
+
+
+   @media ${device.tabletL} {
+    margin: 0;
+    margin-top: 2rem;
+  }
+
 
   /* alternate footer styles --start */
   ${props =>
@@ -81,7 +89,7 @@ const SocialLinks = styled.ul`
 
 
   & a{
-    font-size: 1.75rem;
+    font-size: 2.15rem;
     color: ${props => props.theme.grey5};
     transition: ${props => props.theme.transition};
 

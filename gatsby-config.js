@@ -1,6 +1,8 @@
 require("dotenv").config({
-  path: `.env.${process.env.NODE_ENV}`
+  path: `.env.${process.env.NODE_ENV}`,
 })
+
+console.log(process.env.OPT_CONTAINER_ID)
 
 module.exports = {
   siteMetadata: {
@@ -15,29 +17,26 @@ module.exports = {
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
-        trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
-        optimizeId: process.env.GOOGLE_OPTIMIZE_TRACKING_ID,
-        head: true,
+        trackingId: process.env.GA_TRACKING_ID,
         anonymize: true,
-        respectDNT: true,
         pageTransitionDelay: 0,
-      },
+      }
     },
     {
       resolve: `gatsby-plugin-gdpr-cookies`,
       options: {
         googleAnalytics: {
-          trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID, // leave empty if you want to disable the tracker
+          trackingId: process.env.GA_TRACKING_ID, // leave empty if you want to disable the tracker
           cookieName: "gatsby-gdpr-google-analytics", // default
           anonymize: true, // default
         },
         facebookPixel: {
-          pixelId: process.env.FACEBOOK_PIXEL_ID, // leave empty if you want to disable the tracker
+          pixelId: process.env.FB_PIXEL_ID, // leave empty if you want to disable the tracker
           cookieName: "gatsby-gdpr-facebook-pixel", // default
         },
         // defines the environments where the tracking should be available  - default is ["production"]
         environments: ["production", "development"],
-      }
+      },
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,

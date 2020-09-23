@@ -12,41 +12,15 @@ module.exports = {
     siteUrl: "https://www.devonanderson.net",
   },
   plugins: [
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-sitemap`,
-    `gatsby-plugin-styled-components`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `assets`,
-        path: `${__dirname}/src/assets/`,
-      },
-    },
-    {
-      resolve: `gatsby-source-strapi`,
-      options: {
-        apiURL: process.env.API_URL || "http://localhost:1337",
-        queryLimit: 1000, // Default to 100
-        contentTypes: [`jobs`, `projects`, `blogs`],
-        singleTypes: [`about`],
-      },
-    },
     {
       resolve: `gatsby-plugin-google-analytics`,
       options: {
         trackingId: process.env.GOOGLE_ANALYTICS_TRACKING_ID,
         optimizeId: process.env.GOOGLE_OPTIMIZE_TRACKING_ID,
-        head: false,
+        head: true,
         anonymize: true,
         respectDNT: true,
-        exclude: ["/preview/**", "/do-not-track/me/too"],
         pageTransitionDelay: 0,
-        defer: false,
-        sampleRate: 5,
-        siteSpeedSampleRate: 10,
-        cookieDomain: "devonanderson.net",
       },
     },
     {
@@ -64,6 +38,27 @@ module.exports = {
         // defines the environments where the tracking should be available  - default is ["production"]
         environments: ["production", "development"],
       }
+    },
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-sitemap`,
+    `gatsby-plugin-styled-components`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `assets`,
+        path: `${__dirname}/src/assets/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-strapi`,
+      options: {
+        apiURL: process.env.GATSBY_API_URL || "http://localhost:1337",
+        queryLimit: 1000, // Default to 100
+        contentTypes: [`jobs`, `projects`, `blogs`],
+        singleTypes: [`about`],
+      },
     },
     {
       resolve: `gatsby-plugin-prefetch-google-fonts`,

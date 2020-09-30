@@ -1,10 +1,10 @@
-import React from "react"
-import PropTypes from "prop-types"
-import styled from "styled-components"
-import { device } from "themes/mediaQueries";
-import Image from "gatsby-image"
-import ProjectStackSpan from "styled/StackSpan"
-import { FaGithubSquare, FaShareSquare } from "react-icons/fa"
+import React from 'react'
+import PropTypes from 'prop-types'
+import styled from 'styled-components'
+import { device } from 'themes/mediaQueries'
+import Image from 'gatsby-image'
+import ProjectStackSpan from 'styled/StackSpan'
+import { FaGithubSquare, FaShareSquare } from 'react-icons/fa'
 
 const ProjectArticle = styled.article`
   display: grid;
@@ -13,7 +13,6 @@ const ProjectArticle = styled.article`
   @media ${device.laptop} {
     grid-template-columns: repeat(12, 1fr);
     align-items: center;
-
   }
 `
 const ProjectImage = styled(Image)`
@@ -22,18 +21,22 @@ const ProjectImage = styled(Image)`
   height: 19rem;
   z-index: 1;
 
-  ${ProjectArticle}:hover & :after  {
-     opacity: 0;
+  ${ProjectArticle}:hover & :after {
+    opacity: 0;
   }
 
   & :after {
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(to bottom right, ${props => props.theme.primary5}, #222);
+    background: linear-gradient(
+      to bottom right,
+      ${props => props.theme.primary5},
+      #222
+    );
     opacity: 0.85;
     transition: ${props => props.theme.transition};
   }
@@ -72,6 +75,22 @@ const ProjectInfoContainer = styled.div`
     font-size: 1.5rem;
   }
 
+  .infoSpan {
+    display: inline-block;
+    font-size: 1.25rem;
+    color: ${props => props.theme.primary5};
+    margin-bottom: 0.75rem;
+  }
+
+  .infoDescription {
+    word-spacing: 15px;
+    color: ${props => props.theme.primary3};
+  }
+
+  .stack {
+    margin-bottom: 1rem;
+  }
+
   @media screen and (min-width: 992px) {
     border-radius: ${props => props.theme.radius};
     box-shadow: ${props => props.theme.darkShadow};
@@ -87,56 +106,56 @@ const ProjectInfoContainer = styled.div`
   }
 `
 
-const Span = styled.span`
-  display: inline-block;
-  font-size: 1.25rem;
-  color: ${props => props.theme.primary5};
-  margin-bottom: 0.75rem;
+const ProjectIconWrapper = styled.div`
+  .icon {
+    color: ${props => props.theme.primary5};
+    font-size: 1.25rem;
+    margin-right: 0.5rem;
+    transition: ${props => props.theme.transition};
+
+    & :hover {
+      color: ${props => props.theme.primary1};
+    }
+  }
 `
 
-const ProjectDescription = styled.p`
-  word-spacing: 15px;
-  color: ${props => props.theme.primary3};
-`
-
-const ProjectStack = styled.div`
-  margin-bottom: 1rem;
-`
-
-const StyledGithubSquare = styled(FaGithubSquare)`
-  ${props => props.theme.projectIcon}
-`
-
-const StyledShareSquare = styled(FaShareSquare)`
-  ${props => props.theme.projectIcon}
-`
-
-const Project = ({description, github, title, url, stack, image, index}) => {
+const Project = ({ description, github, title, url, stack, image, index }) => {
   return (
     <ProjectArticle>
-      {image && (<ProjectImage fluid={image.childImageSharp.fluid} />)}
+      {image && <ProjectImage fluid={image.childImageSharp.fluid} />}
       <ProjectInfoContainer>
-        <Span>0{index + 1}.</Span>
+        <span className="infoSpan">0{index + 1}.</span>
         <h3>{title}</h3>
-        <ProjectDescription>{description || "default description"}</ProjectDescription>
-        <ProjectStack>
-          {
-            stack.map(item => <ProjectStackSpan key={item.id}>{item.title}</ProjectStackSpan>)
-          }
-        </ProjectStack>
-        <div>
-          <a href={url} target="_blank" rel="noopener noreferrer">
-            <StyledShareSquare />
-          </a>
-          <a href={github} target="_blank" rel="noopener noreferrer">
-            <StyledGithubSquare />
-          </a>
+        <p className="infoDescription">
+          {description || 'default description'}
+        </p>
+        <div className="stack">
+          {stack.map(item => (
+            <ProjectStackSpan key={item.id}>{item.title}</ProjectStackSpan>
+          ))}
         </div>
+        <ProjectIconWrapper>
+          <a
+            href={url}
+            className="icon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaShareSquare />
+          </a>
+          <a
+            href={github}
+            className="icon"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <FaGithubSquare />
+          </a>
+        </ProjectIconWrapper>
       </ProjectInfoContainer>
     </ProjectArticle>
   )
 }
-
 
 Project.propTypes = {
   title: PropTypes.string.isRequired,
@@ -144,6 +163,6 @@ Project.propTypes = {
   description: PropTypes.string.isRequired,
   url: PropTypes.string.isRequired,
   image: PropTypes.object.isRequired,
-  stack: PropTypes.arrayOf(PropTypes.object).isRequired
+  stack: PropTypes.arrayOf(PropTypes.object).isRequired,
 }
 export default Project

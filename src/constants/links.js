@@ -1,19 +1,21 @@
-import React from "react"
-import styled, { css }from 'styled-components'
-import { Link } from "gatsby"
-import { device } from "themes/mediaQueries"
+import React from 'react'
+import styled, { css } from 'styled-components'
+import { Link } from 'gatsby'
+import { device } from 'themes/mediaQueries'
 
 const StyledLinks = styled.ul`
   display: none;
 
   /* sidebar styles --start */
   ${props =>
-    props.sidebar && css`
+    props.sidebar &&
+    css`
       display: block;
 
       & li {
         opacity: 0;
-        animation: ${props => props.theme.slideRight} 0.5s ease-in-out 0.3s forwards;
+        animation: ${props => props.theme.slideRight} 0.5s ease-in-out 0.3s
+          forwards;
         & :nth-of-type(1) {
           animation-delay: 0.25s;
         }
@@ -47,8 +49,7 @@ const StyledLinks = styled.ul`
           }
         }
       }
-    `
-  }
+    `}
   /* sidebar styles --end */
 
   @media ${device.tabletS} {
@@ -77,43 +78,48 @@ const StyledLinks = styled.ul`
 const data = [
   {
     id: 1,
-    text: "home",
-    url: "/",
+    text: 'home',
+    url: '/',
   },
   {
     id: 2,
-    text: "about",
-    url: "/about/",
+    text: 'about',
+    url: '/about/',
   },
   {
     id: 3,
-    text: "projects",
-    url: "/projects/",
+    text: 'projects',
+    url: '/projects/',
   },
   {
     id: 4,
-    text: "blog",
-    url: "/blog/",
+    text: 'blog',
+    url: '/blog/',
   },
   {
     id: 5,
-    text: "contact",
-    url: "/contact/",
+    text: 'contact',
+    url: '/contact/',
   },
 ]
 
-export default ({sidebar, toggleSidebar}) => {
+//todo: add children section for sidebar
+export default ({ sidebar, toggleSidebar }) => {
   return (
     <StyledLinks sidebar={sidebar}>
-      {
-        data.map(link => {
-          return (
-            <li key={link.id} onClick={toggleSidebar}>
-              <Link to={link.url}>{link.text}</Link>
-            </li>
-          )
-        })
-      }
+      {data.map(link => {
+        return (
+          <li key={link.id}>
+            <Link
+              to={link.url}
+              onClick={toggleSidebar}
+              onKeyDown={toggleSidebar}
+            >
+              {link.text}
+            </Link>
+          </li>
+        )
+      })}
     </StyledLinks>
   )
 }

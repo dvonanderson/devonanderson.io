@@ -1,14 +1,13 @@
-import React from "react"
-import { graphql, Link } from "gatsby"
-import Title from "../components/Title"
-import Image from "gatsby-image"
-import styled from "styled-components"
-import { SectionCenter } from "styled/Section"
-import AboutStack from "styled/StackSpan"
-import { device } from "../themes/mediaQueries"
-import SEO from "../components/SEO"
-import { Button } from "styled/Button"
-
+import React from 'react'
+import { graphql, Link } from 'gatsby'
+import Title from '../components/Title'
+import Image from 'gatsby-image'
+import styled from 'styled-components'
+import { SectionCenter } from 'styled/Section'
+import AboutStack from 'styled/StackSpan'
+import { device } from '../themes/mediaQueries'
+import SEO from '../components/SEO'
+import { Button } from 'styled/Button'
 
 const AboutSection = styled.section`
   ${props => props.theme.pagesStyling};
@@ -17,7 +16,6 @@ const AboutSection = styled.section`
   @media ${device.laptop} {
     padding: 7rem 0;
   }
-
 `
 
 const AboutContainer = styled(SectionCenter)`
@@ -35,7 +33,6 @@ const AboutImage = styled(Image)`
   width: 15rem;
   height: 20rem;
 
-
   @media ${device.laptop} {
     grid-column: 1 / span 4;
     margin-bottom: 0;
@@ -45,6 +42,16 @@ const AboutImage = styled(Image)`
 `
 
 const AboutArticle = styled.article`
+  .title {
+    margin-bottom: 2rem;
+    text-align: left;
+  }
+
+  .underline {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
   & p {
     line-height: 2;
   }
@@ -54,31 +61,39 @@ const AboutArticle = styled.article`
   }
 `
 
-const About = ({ data: { about: {nodes}}}) => {
-  const { info, stack, title, image } = nodes[0];
+const About = ({
+  data: {
+    about: { nodes },
+  },
+}) => {
+  const { info, stack, title, image } = nodes[0]
 
   return (
     <>
-      <SEO title="About" description="about devon anderson"/>
+      <SEO title="About" description="about devon anderson" />
       <AboutSection>
         <AboutContainer>
-          <AboutImage fluid={image.childImageSharp.fluid} alt="devon headshot" />
+          <AboutImage
+            fluid={image.childImageSharp.fluid}
+            alt="devon headshot"
+          />
           <AboutArticle>
-            <Title aboutTitle="true" title={title} aboutUnderline="true"/>
+            <Title title={title} />
             <p>{info}</p>
             <div>
-              {
-                stack.map(item => <AboutStack aboutStack="true" key={item.id}>{item.title}</AboutStack>)
-              }
+              {stack.map(item => (
+                <AboutStack aboutStack="true" key={item.id}>
+                  {item.title}
+                </AboutStack>
+              ))}
             </div>
           </AboutArticle>
         </AboutContainer>
         <Button as={Link} to="/contact" center="true" about="true">
-            contact me
-          </Button>
+          contact me
+        </Button>
       </AboutSection>
     </>
-
   )
 }
 

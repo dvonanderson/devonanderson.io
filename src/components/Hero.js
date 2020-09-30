@@ -1,11 +1,11 @@
-import React from "react"
-import { graphql, useStaticQuery } from "gatsby"
-import SocialLinks from "constants/socialLinks"
+import React from 'react'
+import { graphql, useStaticQuery } from 'gatsby'
+import SocialLinks from 'constants/socialLinks'
 import styled from 'styled-components'
-import { device } from "themes/mediaQueries"
+import { device } from 'themes/mediaQueries'
 import { SectionCenter } from 'styled/Section'
-import Underline from "styled/Underline"
-import Image from "gatsby-image"
+import Underline from 'styled/Underline'
+import Image from 'gatsby-image'
 
 const HeroHeader = styled.header`
   margin-top: -5rem;
@@ -16,7 +16,7 @@ const HeroHeader = styled.header`
 
   @media ${device.laptop} {
     & :before {
-      content: "";
+      content: '';
       position: absolute;
       top: 0;
       left: 65%;
@@ -33,57 +33,60 @@ const HeroSection = styled(SectionCenter)`
   align-items: center;
 
   @media ${device.laptop} {
-     grid-template-columns: repeat(12, 1fr);
+    grid-template-columns: repeat(12, 1fr);
+  }
+
+  .hero-article {
+    text-align: center;
+
+    @media ${device.tabletM} {
+      text-align: left;
+    }
+
+    @media ${device.laptop} {
+      grid-row: 1 / 1;
+      grid-column: 1 / span 8;
+    }
   }
 `
+const HeroInfoWrapper = styled.div`
+  .underline {
+    @media ${device.laptop} {
+      margin: 0;
+      margin-bottom: 1.25rem;
+    }
+  }
 
-const Article = styled.article`
-  text-align: center;
   & h1 {
     font-size: 2.5rem;
-  }
-  @media ${device.tabletS} {
-    & h1 {
+    @media ${device.tabletS} {
       font-size: 3rem;
     }
-  }
 
-  @media ${device.tabletM} {
-    text-align: left;
-  }
-
-  @media ${device.laptop} {
-    & h1 {
-      font-size: 4.25rem;
+    @media ${device.laptop} {
+      font-size: 3.75rem;
     }
-    grid-row: 1 / 1;
-    grid-column: 1 / span 8;
   }
 
-  //? may not need this
-  /* @media ${device.laptop} {
-    grid-column: 1 / span 8;
-  } */
+  & h4 {
+    color: ${props => props.theme.primary5};
 
+    @media ${device.tabletS} {
+      font-size: 1rem;
+    }
+
+    @media ${device.laptop} {
+      font-size: 0.85rem;
+    }
+
+    @media ${device.desktop} {
+      font-size: 1.75rem;
+      line-height: 1;
+    }
+  }
 `
 
-const H4 = styled.h4`
-  color: ${props => props.theme.primary5};
-
-  @media ${device.tabletS} {
-    font-size: 1rem;
-  }
-  @media ${device.laptop} {
-    font-size: 0.85rem;
-  }
-
-  @media ${device.desktop} {
-    font-size: 1.75rem;
-    line-height: 1;
-  }
- `
-
- const StyledImage = styled(Image)`
+const StyledImage = styled(Image)`
   display: none;
 
   @media ${device.laptop} {
@@ -91,11 +94,11 @@ const H4 = styled.h4`
     grid-row: 1/1;
     grid-column: 7/-1;
   }
- `
+`
 
 const query = graphql`
   {
-    file(relativePath: {eq: "dsa-headshot-hero.png"}) {
+    file(relativePath: { eq: "dsa-headshot-hero.png" }) {
       childImageSharp {
         fluid {
           ...GatsbyImageSharpFluid
@@ -105,27 +108,25 @@ const query = graphql`
   }
 `
 
-
-
 const Hero = () => {
   const {
     file: {
       childImageSharp: { fluid },
-    }
+    },
   } = useStaticQuery(query)
 
   return (
     <HeroHeader>
       <HeroSection>
-        <Article>
-          <div>
-            <Underline heroUnderline="true"/>
+        <article className="hero-article">
+          <HeroInfoWrapper>
+            <Underline />
             <h1>Hello, I'm Devon</h1>
-            <H4>Fullstack Developer</H4>
+            <h4>Fullstack Developer</h4>
             <SocialLinks />
-          </div>
-        </Article>
-        <StyledImage fluid={fluid} alt="image of devon"/>
+          </HeroInfoWrapper>
+        </article>
+        <StyledImage fluid={fluid} alt="image of devon" />
       </HeroSection>
     </HeroHeader>
   )

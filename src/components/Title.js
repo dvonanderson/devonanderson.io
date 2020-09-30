@@ -1,30 +1,23 @@
-import React from "react"
-import styled, { css } from "styled-components"
-import PropTypes from "prop-types"
-import Underline from "styled/Underline"
+import React from 'react'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import Underline from 'styled/Underline'
 
-const SectionTitle = styled.div`
-  margin-bottom: 4rem;
-  text-align: center;
-
-  ${props =>
-    props.aboutTitle && css`
-      margin-bottom: 2rem;
-      text-align: left;
-    `
+const TitleWrapper = styled.div`
+  .title {
+    margin-bottom: 4rem;
+    text-align: center;
   }
 `
 
-const Title = ({ title, aboutTitle, aboutUnderline, serviceUnderline, heroUnderline }) => {
+const Title = ({ title }) => {
   return (
-    <SectionTitle aboutTitle={aboutTitle}>
-      <h2>{ title || "default title"}</h2>
-      <Underline
-        aboutUnderline={aboutUnderline}
-        serviceUnderline={serviceUnderline}
-        heroUnderline={heroUnderline}
-      />
-    </SectionTitle>
+    <TitleWrapper>
+      <div className="title">
+        <h2>{title || 'default title'}</h2>
+        <Underline />
+      </div>
+    </TitleWrapper>
   )
 }
 

@@ -1,45 +1,50 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Blogs from "components/Blogs"
-import styled from "styled-components"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Posts from 'components/Posts'
+import StyledBackgroundSection from '../components/BlogHero'
 
+const BlogPage = ({ data, location }) => {
+  const isBlogPage = location.pathname === '/blog/'
 
-const AllBlogsSection = styled.section`
-  ${props => props.theme.pagesStyling};
+  const {
+    allMdx: { nodes: posts },
+  } = data
 
-  background: ${props => props.theme.white}
-`
-const Blog = ({
-  data: {
-    allStrapiBlogs: {nodes: blogs},
-  }
-}) => {
   return (
-    <AllBlogsSection>
-      <Blogs blogs={blogs} title="blog"/>
-    </AllBlogsSection>
+    <>
+      <StyledBackgroundSection />
+      <Posts posts={posts} title="before the peak" isBlogPage={isBlogPage} />
+    </>
   )
 }
 
 export const query = graphql`
   {
-    allStrapiBlogs {
+    allMdx {
       nodes {
-        slug
-        description
-        date(formatString: "MMMM Do, YYYY")
-        id
-        title
-        category
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
+        excerpt
+        frontmatter {
+          author
+          category
+          date(formatString: "MMM Do, YYYY")
+          slug
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
             }
+          }
+        }
+        id
+        fields {
+          readingTime {
+            text
           }
         }
       }
     }
   }
 `
-export default Blog
+
+export default BlogPage

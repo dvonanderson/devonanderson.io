@@ -1,38 +1,63 @@
-import React from "react"
-import { graphql } from "gatsby"
-import Hero from "components/Hero"
-import Services from "components/Services"
-import Jobs from "components/Jobs"
-import Projects from "components/Projects"
-import Blogs from "components/Blogs"
-import SEO from "../components/SEO"
+import React from 'react'
+import { graphql } from 'gatsby'
+import Hero from 'components/Hero'
+import Services from 'components/Services'
+import Jobs from 'components/Jobs'
+import Projects from 'components/Projects'
+import SEO from 'components/SEO'
+import Posts from 'components/Posts'
 
-export default ({data}) => {
+export default ({ data }) => {
   const {
-    allStrapiProjects: {nodes:projects},
-    allStrapiBlogs: {nodes:blogs}
+    allStrapiProjects: { nodes: projects },
+    allMdx: { nodes: posts },
   } = data
 
   return (
     <>
-
-      <SEO title="Home" description="devon anderson home page"/>
+      <SEO title="Home" description="devon anderson home page" />
       <Hero />
-      <Services />
+      <Services title="services" />
       <Jobs />
-      <Projects projects={projects} title="featured projects" showLink/>
-      <Blogs blogs={blogs} title="latest articles" showLink/>
+      <Projects projects={projects} title="featured projects" showLink />
+      <Posts posts={posts} title="recent articles" />
     </>
   )
 }
 
-export const query = graphql `
+export const query = graphql`
   {
-    allStrapiProjects(filter: {featured: {eq: true}}) {
+    allMdx(sort: { fields: frontmatter___date, order: DESC }, limit: 3) {
+      nodes {
+        excerpt
+        frontmatter {
+          author
+          category
+          date(formatString: "MMM Do, YYYY")
+          slug
+          title
+          image {
+            childImageSharp {
+              fluid {
+                ...GatsbyImageSharpFluid
+              }
+            }
+          }
+        }
+        id
+        fields {
+          readingTime {
+            text
+          }
+        }
+      }
+    }
+
+    allStrapiProjects(filter: { featured: { eq: true } }) {
       nodes {
         title
         strapiId
-        stack:stack_item {
+        stack: stack_item {
           id
           title
         }
@@ -49,27 +74,5 @@ export const query = graphql `
         }
       }
     }
-
-    allStrapiBlogs(sort: {
-      fields: date,
-      order: DESC
-    }, limit: 3) {
-      nodes {
-        slug
-        description
-        date(formatString: "MMMM Do, YYYY")
-        id
-        title
-        category
-        image {
-          childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
-          }
-        }
-      }
-    }
   }
 `
-

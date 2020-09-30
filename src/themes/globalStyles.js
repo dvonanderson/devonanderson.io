@@ -1,6 +1,6 @@
-import { createGlobalStyle } from "styled-components"
-import { device } from "themes/mediaQueries"
-import reset from "styled-reset"
+import { createGlobalStyle } from 'styled-components'
+import { device } from 'themes/mediaQueries'
+import reset from 'styled-reset'
 
 export const GlobalStyles = createGlobalStyle`
  ${reset}
@@ -44,7 +44,7 @@ export const GlobalStyles = createGlobalStyle`
   h2 {
     font-size: 2rem;
     @media ${device.tabletM} {
-      font-size: 2.5rem;
+    font-size: 2.5rem;
     }
   }
 

@@ -5,21 +5,35 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
   const result = await graphql(`
     {
-      blogs: allStrapiBlogs {
+      allMdx {
         nodes {
-          slug
+          frontmatter {
+            slug
+          }
         }
+      }
+      categories: allMdx {
+        distinct(field: frontmatter___category)
       }
     }
   `)
 
-  result.data.blogs.nodes.forEach(blog => {
+  result.data.allMdx.nodes.forEach(({ frontmatter: {slug}}) => {
     createPage({
-      path: `/blogs/${blog.slug}`,
-      component: path.resolve(`src/templates/blog-template.js`),
+      path: `/posts/${slug}`,
+      component: path.resolve(`src/templates/post-template.js`),
       context: {
-        slug: blog.slug,
+        slug
       },
+    })
+  })
+  result.data.categories.distinct.forEach((category) => {
+    createPage({
+      path: `/${category}`,
+      component: path.resolve(`src/templates/category-template.js`),
+      context: {
+        category
+      }
     })
   })
 }

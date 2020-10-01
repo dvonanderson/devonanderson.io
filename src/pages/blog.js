@@ -1,7 +1,7 @@
 import React from 'react'
 import { graphql } from 'gatsby'
 import Posts from 'components/Posts'
-import StyledBackgroundSection from '../components/BlogHero'
+import BlogHero from '../components/BlogHero'
 
 const BlogPage = ({ data, location }) => {
   const isBlogPage = location.pathname === '/blog/'
@@ -12,7 +12,7 @@ const BlogPage = ({ data, location }) => {
 
   return (
     <>
-      <StyledBackgroundSection />
+      <BlogHero />
       <Posts posts={posts} title="before the peak" isBlogPage={isBlogPage} />
     </>
   )

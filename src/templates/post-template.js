@@ -5,7 +5,7 @@ import Banner from '../components/Banner'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { device } from '../themes/mediaQueries'
-import StyledBackgroundSection from '../components/BlogHero'
+import BlogHero from '../components/BlogHero'
 import Underline from '../styled/Underline'
 import SEO from '../components/SEO'
 
@@ -94,10 +94,9 @@ const PostTemplate = ({ data }) => {
       <SEO
         title={title}
         description={`A post about ${category}`}
-        image={image}
-        article={title}
+        article={true}
       />
-      <StyledBackgroundSection />
+      <BlogHero />
       <PostTemplateWrapper>
         <article>
           <Image fluid={image.childImageSharp.fluid} />

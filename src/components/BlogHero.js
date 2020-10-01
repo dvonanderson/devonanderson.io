@@ -1,58 +1,32 @@
 import React from 'react'
-import { graphql, StaticQuery } from 'gatsby'
 import styled from 'styled-components'
-import BackgroundImage from 'gatsby-background-image'
+import { device } from 'themes/mediaQueries'
 
-const BackgroundSection = ({ className }) => (
-  <StaticQuery
-    query={graphql`
-      query {
-        mountain: file(relativePath: { eq: "valley-peak.jpg" }) {
-          childImageSharp {
-            fluid(quality: 90, maxWidth: 1920) {
-              ...GatsbyImageSharpFluid_withWebp
-            }
-          }
-        }
-      }
-    `}
-    render={data => {
-      const imageData = data.mountain.childImageSharp.fluid
-
-      return (
-        <BackgroundImage
-          Tag="section"
-          className={className}
-          fluid={imageData}
-          backgroundColor={`#040e18`}
-        >
-          <Overlay />
-        </BackgroundImage>
-      )
-    }}
-  />
-)
-const Overlay = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgb(17, 17, 17);
-  background: radial-gradient(
-    circle,
-    rgba(17, 17, 17, 0.1558998599439776) 0%,
-    rgba(17, 17, 17, 1) 100%
-  );
-`
-const StyledBackgroundSection = styled(BackgroundSection)`
+const HeroHeader = styled.header`
+  background: ${props => props.theme.primary10};
+  height: 12rem;
   position: relative;
+  z-index: -1;
   margin-bottom: 6rem;
-  width: 100%;
-  height: 40rem;
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
+
+  & :after {
+    content: 'I am here';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 6rem;
+    width: 100%;
+    background: url('../assets/vector1.svg');
+    background-size: cover;
+
+    @media ${device.tabletM} {
+      height: 20rem;
+    }
+  }
 `
 
-export default StyledBackgroundSection
+const BlogHero = () => {
+  return <HeroHeader></HeroHeader>
+}
+
+export default BlogHero

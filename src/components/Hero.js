@@ -59,6 +59,8 @@ const HeroInfoWrapper = styled.div`
 
   & h1 {
     font-size: 2.5rem;
+    font-family: Permanent Marker;
+
     @media ${device.tabletS} {
       font-size: 3rem;
     }

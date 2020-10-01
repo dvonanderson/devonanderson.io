@@ -31,22 +31,22 @@ module.exports = {
         pageTransitionDelay: 0,
       },
     },
-    {
-      resolve: `gatsby-plugin-gdpr-cookies`,
-      options: {
-        googleAnalytics: {
-          trackingId: process.env.GA_TRACKING_ID, // leave empty if you want to disable the tracker
-          cookieName: 'gatsby-gdpr-google-analytics', // default
-          anonymize: true, // default
-        },
-        facebookPixel: {
-          pixelId: process.env.FB_PIXEL_ID, // leave empty if you want to disable the tracker
-          cookieName: 'gatsby-gdpr-facebook-pixel', // default
-        },
-        // defines the environments where the tracking should be available  - default is ["production"]
-        environments: ['production', 'development'],
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-gdpr-cookies`,
+    //   options: {
+    //     googleAnalytics: {
+    //       trackingId: process.env.GA_TRACKING_ID, // leave empty if you want to disable the tracker
+    //       cookieName: 'gatsby-gdpr-google-analytics', // default
+    //       anonymize: true, // default
+    //     },
+    //     facebookPixel: {
+    //       pixelId: process.env.FB_PIXEL_ID, // leave empty if you want to disable the tracker
+    //       cookieName: 'gatsby-gdpr-facebook-pixel', // default
+    //     },
+    //     // defines the environments where the tracking should be available  - default is ["production"]
+    //     environments: ['production', 'development'],
+    //   },
+    // },
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
@@ -139,6 +139,9 @@ module.exports = {
           },
           {
             family: `Open Sans`,
+          },
+          {
+            family: 'Permanent Marker',
           },
         ],
       },

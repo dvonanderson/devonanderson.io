@@ -22,6 +22,7 @@ const SidebarAside = styled.aside`
 
   @media ${device.laptop} {
     transform: translateX(200%);
+    display: none;
   }
 `
 

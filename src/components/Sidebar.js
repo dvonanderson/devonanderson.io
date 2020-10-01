@@ -3,26 +3,24 @@ import SocialLinks from '../constants/socialLinks'
 import PageLinks from '../constants/links'
 import { FaTimes } from 'react-icons/fa'
 import styled from 'styled-components'
-import { device } from 'themes/mediaQueries'
 
 const SidebarAside = styled.aside`
-  background: ${props => props.theme.grey10};
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 999;
-  display: grid;
-  place-items: center;
-  opacity: ${props => (props.showsidebar ? '1' : '0')};
-  transition: ${props => props.theme.transition};
-  transform: ${props =>
-    props.showsidebar ? 'translateX(0)' : 'translateX(200%)'};
+  transform: translateX(-100%);
 
-  @media ${device.laptop} {
-    transform: translateX(-100%);
-    z-index: -999;
+  @media screen and (max-width: 992px) {
+    background: ${props => props.theme.grey10};
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    display: grid;
+    place-items: center;
+    opacity: ${props => (props.showsidebar ? '1' : '0')};
+    transition: ${props => props.theme.transition};
+    transform: ${props =>
+      props.showsidebar ? 'translateX(0)' : 'translateX(-100%)'};
   }
 `
 

@@ -78,6 +78,7 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-sitemap`,
+    `babel-plugin-styled-components`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-advanced-sitemap`,
     `gatsby-remark-images`,

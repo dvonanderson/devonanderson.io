@@ -21,8 +21,8 @@ const SidebarAside = styled.aside`
     props.showsidebar ? 'translateX(0)' : 'translateX(200%)'};
 
   @media ${device.laptop} {
-    transform: translateX(200%);
-    display: none;
+    transform: translateX(-100%);
+    z-index: -999;
   }
 `
 

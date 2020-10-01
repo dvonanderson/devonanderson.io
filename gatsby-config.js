@@ -74,6 +74,7 @@ module.exports = {
         username: 8385666633,
       },
     },
+    `gatsby-plugin-offline`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-helmet`,

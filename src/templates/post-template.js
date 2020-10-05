@@ -93,7 +93,7 @@ const PostTemplate = ({ data }) => {
     <>
       <SEO
         title={title}
-        description={`A post about ${category}`}
+        description={`Before the Peak is the blog source for Devon Anderson's portfolio. It focuses on many design and development categories with a twist of crazy.`}
         article={true}
       />
       <BlogHero />

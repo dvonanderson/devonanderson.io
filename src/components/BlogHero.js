@@ -1,32 +1,101 @@
 import React from 'react'
+import BackgroundImage from 'gatsby-background-image'
+import { StaticQuery, graphql } from 'gatsby'
+
 import styled from 'styled-components'
-import { device } from 'themes/mediaQueries'
+import { device } from '../themes/mediaQueries'
 
-const HeroHeader = styled.header`
-  background: ${props => props.theme.primary10};
-  height: 12rem;
-  position: relative;
-  z-index: -1;
-  margin-bottom: 6rem;
+const Hero = ({ className }) => (
+  <StaticQuery
+    query={graphql`
+      {
+        hero: file(relativePath: { eq: "before-the-peak.jpg" }) {
+          childImageSharp {
+            fluid(quality: 90, maxWidth: 1920) {
+              ...GatsbyImageSharpFluid
+            }
+          }
+        }
+      }
+    `}
+    render={data => {
+      const imageData = data.hero.childImageSharp.fluid
+      return (
+        <BackgroundImage
+          Tag="section"
+          className={className}
+          fluid={imageData}
+          backgroundColor={'#f2f2f2'}
+        >
+          <div className="overlay">
+            <div className="content">
+              <h1>before the peak</h1>
+              <hr />
+              <h3>the mind of a disturbed polyglot</h3>
+            </div>
+          </div>
+        </BackgroundImage>
+      )
+    }}
+  />
+)
 
-  & :after {
-    content: 'I am here';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    height: 6rem;
-    width: 100%;
-    background: url('../assets/vector1.svg');
-    background-size: cover;
+const BlogHero = styled(Hero)`
+  width: 100%;
+  height: 30vh;
+  margin-bottom: 2rem;
+  background-position: center 40%;
+  background-repeat: no-repeat;
+  background-size: cover;
 
-    @media ${device.tabletM} {
-      height: 20rem;
+  .overlay {
+    display: -webkit-flex; /* Safari */
+    display: flex;
+    background-color: rgba(0, 0, 0, 0.5);
+    height: 100%;
+    align-items: center;
+
+    .content {
+      width: 90%;
+      margin: 0 auto;
+      text-align: center;
+      color: #fff;
+
+      & hr {
+        border: 0;
+        height: 1px;
+        background-image: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          rgba(255, 255, 255, 0.75),
+          rgba(255, 255, 255, 0)
+        );
+      }
+
+      & h1 {
+        font-size: 2rem;
+        font-family: Permanent Marker;
+      }
+      & h3 {
+        font-size: 1rem;
+      }
+    }
+  }
+
+  @media ${device.tabletS} {
+    height: 60vh;
+    margin-bottom: 6rem;
+
+    .overlay {
+      .content {
+        max-width: 800px;
+
+        & h1 {
+          font-size: 5rem;
+        }
+      }
     }
   }
 `
-
-const BlogHero = () => {
-  return <HeroHeader></HeroHeader>
-}
 
 export default BlogHero

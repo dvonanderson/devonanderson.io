@@ -1,10 +1,8 @@
 import React from 'react'
 import Layout from './src/components/Layout'
-import { GlobalStyles } from './src/themes/globalStyles'
-import * as theme from 'themes/theme'
-import { ThemeProvider } from 'styled-components'
-// import Cookie from './src/components/Cookies'
 import { MDXProvider } from '@mdx-js/react'
+// import Cookie from './src/components/Cookies'
+
 import { Headings, Code, MdxBlockQuote, Prism } from './src/components/Mdx'
 
 const components = {
@@ -15,11 +13,7 @@ const components = {
   pre: Prism,
 }
 export const wrapRootElement = ({ element }) => (
-  <ThemeProvider theme={theme}>
-    <GlobalStyles />
-    {/* <Cookie /> */}
-    <MDXProvider components={components}>
-      <Layout>{element}</Layout>
-    </MDXProvider>
-  </ThemeProvider>
+  <Layout>
+    <MDXProvider components={components}>{element}</MDXProvider>
+  </Layout>
 )

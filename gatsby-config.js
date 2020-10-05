@@ -142,7 +142,10 @@ module.exports = {
             family: `Open Sans`,
           },
           {
-            family: 'Permanent Marker',
+            family: `Permanent Marker`,
+          },
+          {
+            family: `VT323`,
           },
         ],
       },

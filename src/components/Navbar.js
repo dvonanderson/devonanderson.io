@@ -1,12 +1,9 @@
-import React, {
-  useEffect,
-  useState
-} from 'react'
-import logo from "assets/my-logo.svg"
-import { FaAlignRight } from "react-icons/fa"
-import PageLinks from "constants/links"
-import styled, {css} from 'styled-components'
-import { device } from "themes/mediaQueries";
+import React, { useEffect, useState } from 'react'
+import logo from 'assets/my-logo.svg'
+import PageLinks from 'constants/links'
+import styled, { css } from 'styled-components'
+import { device } from 'themes/mediaQueries'
+import MenuIcon from './MenuIcon'
 
 export const StyledNavbar = styled.div`
   position: absolute;
@@ -17,19 +14,19 @@ export const StyledNavbar = styled.div`
   display: flex;
   align-items: center;
   z-index: 200;
-  background: rgba(255,255, 255, 0.5) ;
+  background: rgba(255, 255, 255, 0.5);
 
   @media ${device.laptop} {
     background: transparent;
 
     ${props =>
-    props.navbarSticky && css`
-      background: ${props => props.theme.white};
-      position: fixed;
-      box-shadow: ${props => props.theme.lightShadow};
-      animation: ${props => props.theme.moveDown} 0.5s ease-in-out;
-    `
-    }
+      props.navbarSticky &&
+      css`
+        background: ${props => props.theme.white};
+        position: fixed;
+        box-shadow: ${props => props.theme.lightShadow};
+        animation: ${props => props.theme.moveDown} 0.5s ease-in-out;
+      `}
   }
 `
 export const NavWrapper = styled.div`
@@ -54,29 +51,10 @@ export const NavInner = styled.div`
   }
 `
 
-export const NavButton = styled.button`
-  font-size: 2rem;
-  background: transparent;
-  border-color: transparent;
-  color: ${props => props.theme.primary5};
-  cursor: pointer;
-  transition: ${props => props.theme.transition};
-
-  & :hover{
-    color: ${props => props.theme.primary2};
-  }
-
-  @media ${device.tabletS} {
-    display: none;
-  }
-
-`
-
-const Navbar = ({ toggleSidebar }) => {
+const Navbar = ({ toggleSidebar, nav }) => {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10
       if (isScrolled !== scrolled) {
@@ -84,20 +62,20 @@ const Navbar = ({ toggleSidebar }) => {
       }
     }
 
-    document.addEventListener('scroll', handleScroll, {passive: true})
+    document.addEventListener('scroll', handleScroll, { passive: true })
 
-    return () => {document.removeEventListener('scroll', handleScroll)}
-
+    return () => {
+      document.removeEventListener('scroll', handleScroll)
+    }
   }, [scrolled])
 
+  console.log(nav)
   return (
     <StyledNavbar navbarSticky={scrolled}>
       <NavWrapper>
         <NavInner>
           <img src={logo} alt="dsa logo" />
-          <NavButton onClick={toggleSidebar}>
-            <FaAlignRight />
-          </NavButton>
+          <MenuIcon toggleSidebar={toggleSidebar} close={nav} reg />
         </NavInner>
         <PageLinks />
       </NavWrapper>

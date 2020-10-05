@@ -1,22 +1,26 @@
 import React from 'react'
+import { ThemeProvider } from 'styled-components'
+import { GlobalStyles } from 'themes/globalStyles'
+import * as theme from 'themes/theme'
 import Navbar from './Navbar'
 import Sidebar from './Sidebar'
 import Footer from './Footer'
 
 const Layout = ({ children }) => {
-  const [isOpen, setIsOpen] = React.useState(false)
+  const [nav, showNav] = React.useState(false)
 
   const toggleSidebar = () => {
-    setIsOpen(!isOpen)
+    showNav(!nav)
   }
 
   return (
-    <>
-      <Navbar toggleSidebar={toggleSidebar} />
-      <Sidebar isOpen={isOpen} toggleSidebar={toggleSidebar} />
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Navbar nav={nav} toggleSidebar={toggleSidebar} />
+      <Sidebar nav={nav} toggleSidebar={toggleSidebar} />
       {children}
       <Footer />
-    </>
+    </ThemeProvider>
   )
 }
 

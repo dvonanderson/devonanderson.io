@@ -69,7 +69,6 @@ const Navbar = ({ toggleSidebar, nav }) => {
     }
   }, [scrolled])
 
-  console.log(nav)
   return (
     <StyledNavbar navbarSticky={scrolled}>
       <NavWrapper>

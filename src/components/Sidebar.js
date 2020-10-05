@@ -67,7 +67,6 @@ const StyledSidebar = styled.aside`
 `
 
 const Sidebar = ({ toggleSidebar, nav }) => {
-  console.log(nav)
   return (
     <StyledSidebar nav={nav}>
       <MenuIcon toggleSidebar={toggleSidebar} close={nav} />

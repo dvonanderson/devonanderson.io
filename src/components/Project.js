@@ -6,7 +6,9 @@ import Image from 'gatsby-image'
 import ProjectStackSpan from 'styled/StackSpan'
 import { FaGithubSquare, FaShareSquare } from 'react-icons/fa'
 
-const ProjectArticle = styled.article`
+const ProjectArticle = styled.article.attrs({
+  id: 'project-article',
+})`
   display: grid;
   margin-bottom: 4rem;
 
@@ -21,26 +23,6 @@ const ProjectImage = styled(Image)`
   height: 19rem;
   z-index: 1;
 
-  ${ProjectArticle}:hover & :after {
-    opacity: 0;
-  }
-
-  & :after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-      to bottom right,
-      ${props => props.theme.primary5},
-      #222
-    );
-    opacity: 0.85;
-    transition: ${props => props.theme.transition};
-  }
-
   @media ${device.mobileM} {
     height: 19rem;
   }
@@ -50,16 +32,9 @@ const ProjectImage = styled(Image)`
   }
 
   @media ${device.laptop} {
-    grid-column: 1 / span 8;
+    grid-column: 1 / span 11;
     grid-row: 1 / 1;
-    height: 30rem;
-    border-radius: ${props => props.theme.radius};
-    box-shadow: ${props => props.theme.darkShadow};
-
-    ${ProjectArticle}:nth-of-type(even) & {
-      grid-column: 5 / -1;
-      grid-row: 1 / 1;
-    }
+    height: 35rem;
   }
 `
 
@@ -68,11 +43,12 @@ const ProjectInfoContainer = styled.div`
   padding: 1rem 2rem;
   border-bottom-left-radius: ${props => props.theme.radius};
   border-bottom-right-radius: ${props => props.theme.radius};
+  //todo: work on transitioning element when screen comes into view
 
-  &h3 {
+  & h3 {
     font-weight: 500;
     margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
   }
 
   .infoSpan {
@@ -85,24 +61,19 @@ const ProjectInfoContainer = styled.div`
   .infoDescription {
     word-spacing: 15px;
     color: ${props => props.theme.primary3};
+    font-size: 0.85rem;
   }
 
   .stack {
     margin-bottom: 1rem;
   }
 
-  @media screen and (min-width: 992px) {
+  @media ${device.laptop} {
     border-radius: ${props => props.theme.radius};
     box-shadow: ${props => props.theme.darkShadow};
     z-index: 1;
-    grid-column: 5 /12;
+    grid-column: 1 / 5;
     grid-row: 1 / 1;
-
-    ${ProjectArticle} :nth-of-type(even) & {
-      grid-column: 2 / span 7;
-      grid-row: 1 / 1;
-      text-align: left;
-    }
   }
 `
 

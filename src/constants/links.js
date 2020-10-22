@@ -1,7 +1,8 @@
 import React from 'react'
-import styled, { css } from 'styled-components'
+import styled from 'styled-components'
 import { Link } from 'gatsby'
 import { device } from 'themes/mediaQueries'
+import SocialLinks from './socialLinks'
 
 const LinksWrapper = styled.div`
   .nav-links {
@@ -13,7 +14,6 @@ const LinksWrapper = styled.div`
 
       & li {
         margin-right: 2rem;
-
         & a {
           text-transform: capitalize;
           color: ${props => props.theme.grey1};
@@ -60,20 +60,21 @@ const data = [
   },
 ]
 
-export default ({ closeSidebar }) => {
+export default ({ showSocialLinks, closeSideBar }) => {
   return (
     <LinksWrapper>
       <ul className="nav-links">
         {data.map(link => {
           return (
             <li key={link.id}>
-              <Link to={link.url} onClick={closeSidebar}>
+              <Link to={link.url} onClick={closeSideBar}>
                 {link.text}
               </Link>
             </li>
           )
         })}
       </ul>
+      {showSocialLinks ? <SocialLinks sidebar /> : null}
     </LinksWrapper>
   )
 }

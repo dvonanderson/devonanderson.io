@@ -24,7 +24,7 @@ export const grey4 = 'hsl(209, 28%, 39%)'
 export const grey5 = 'hsl(210, 22%, 49%)'
 export const grey8 = 'hsl(210, 31%, 80%)'
 export const grey9 = 'hsl(212, 33%, 89%)'
-export const grey10 = 'hsl(210, 36%, 96%)'
+export const grey10 = '#f1f5f8'
 export const darkGreen = 'hsl(125, 67%, 35%)'
 export const darkRed = 'hsl(360, 67%, 44%)'
 export const lightRed = 'hsl(360, 71%, 66%)'
@@ -37,9 +37,9 @@ export const secondary = 'Open Sans'
 
 //Animation
 export const transition = 'all 0.3s linear'
-export const slideRight = keyframes`
+export const slideLeft = keyframes`
   0% {
-    transform: translateX(-200px);
+    transform: translateX(200px);
     opacity: 0;
   }
 

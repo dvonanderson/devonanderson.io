@@ -1,7 +1,6 @@
 import React from 'react'
 import styled, { css } from 'styled-components'
 
-
 const StackSpan = styled.span`
   display: inline-block;
   background: ${props => props.theme.grey9};
@@ -11,15 +10,16 @@ const StackSpan = styled.span`
   border-radius: ${props => props.theme.radius};
   text-transform: uppercase;
   letter-spacing: 2px;
-  font-size: 0.85rem;
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
 
   ${props =>
-    props.aboutStack && css`
+    props.aboutStack &&
+    css`
       margin-top: 0.5rem;
-    `
-  }
+    `}
 `
 
-export default ({aboutStack, children}) => {
+export default ({ aboutStack, children }) => {
   return <StackSpan aboutStack={aboutStack}>{children}</StackSpan>
 }

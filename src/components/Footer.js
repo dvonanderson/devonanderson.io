@@ -1,6 +1,6 @@
-import React from "react"
-import SocialLinks from "../constants/socialLinks"
-import styled from "styled-components"
+import React from 'react'
+import SocialLinks from '../constants/socialLinks'
+import styled from 'styled-components'
 
 const StyledFooter = styled.footer`
   height: 9rem;
@@ -16,7 +16,7 @@ const StyledFooter = styled.footer`
     text-transform: uppercase;
 
     & span {
-      color: ${props => props.theme.primary5}
+      color: ${props => props.theme.primary5};
     }
   }
 `
@@ -24,10 +24,9 @@ const StyledFooter = styled.footer`
 const Footer = () => {
   return (
     <StyledFooter>
-      <SocialLinks footer/>
+      <SocialLinks footer />
       <h4>
-        copyright&copy;{new Date().getFullYear()}{' '}
-        <span>dsa</span> all rights reserved.
+        &copy;{new Date().getFullYear()} <span>dsa</span> all rights reserved.
       </h4>
     </StyledFooter>
   )

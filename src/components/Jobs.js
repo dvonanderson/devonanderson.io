@@ -1,13 +1,11 @@
-import React from "react"
-import Title from "./Title"
-import { graphql, useStaticQuery } from "gatsby"
-import { Link } from "gatsby"
-import styled from "styled-components"
-import { device } from "themes/mediaQueries"
-import { Section } from "styled/Section"
-import { FaAngleDoubleRight } from "react-icons/fa"
-import  {Button } from "styled/Button"
-import { JobButton } from "styled/JobButton"
+import React from 'react'
+import Title from './Title'
+import { graphql, useStaticQuery } from 'gatsby'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
+import { device } from 'themes/mediaQueries'
+import { FaAngleDoubleRight } from 'react-icons/fa'
+import { JobButton, Button, Section } from '../components/Styled-Components'
 
 const StyledSection = styled(Section)``
 
@@ -36,7 +34,7 @@ const ButtonContainer = styled.div`
 `
 
 const JobArticle = styled.article`
-  & h3{
+  & h3 {
     font-weight: 400;
   }
 
@@ -65,7 +63,7 @@ const JobDescription = styled.div`
     color: ${props => props.theme.primary3};
   }
 `
-const JobIcon = styled(FaAngleDoubleRight) `
+const JobIcon = styled(FaAngleDoubleRight)`
   color: ${props => props.theme.primary5};
 `
 // (sort: {fields: strapiId, order: DESC})
@@ -89,43 +87,41 @@ const query = graphql`
 const Jobs = () => {
   const data = useStaticQuery(query)
   //alias your node
-  const {allStrapiJobs:{nodes:jobs}} = data
+  const {
+    allStrapiJobs: { nodes: jobs },
+  } = data
   const [value, setValue] = React.useState(0)
-  const {company, position, date, desc} = jobs[value]
+  const { company, position, date, desc } = jobs[value]
 
   return (
     <StyledSection>
-      <Title title="experience"/>
+      <Title title="experience" />
       <JobsContainer>
         <ButtonContainer>
-          {
-            jobs.map((item, index) => {
-              return (
-                <JobButton
-                  key={item.strapiId}
-                  onClick={() => setValue(index)}
-                  activeBtn={index === value}
-                >
-                  {item.company}
-                </JobButton>
-              )
-            })
-          }
+          {jobs.map((item, index) => {
+            return (
+              <JobButton
+                key={item.strapiId}
+                onClick={() => setValue(index)}
+                activeBtn={index === value}
+              >
+                {item.company}
+              </JobButton>
+            )
+          })}
         </ButtonContainer>
         <JobArticle>
           <h3>{position}</h3>
           <h4>{company}</h4>
           <JobDate>{date}</JobDate>
-          {
-            desc.map(item => {
-              return (
-                <JobDescription key={item.id}>
-                  <JobIcon />
-                  <p>{item.name}</p>
-                </JobDescription>
-              )
-            })
-          }
+          {desc.map(item => {
+            return (
+              <JobDescription key={item.id}>
+                <JobIcon />
+                <p>{item.name}</p>
+              </JobDescription>
+            )
+          })}
         </JobArticle>
       </JobsContainer>
       <Button as={Link} to="/about" center="true">

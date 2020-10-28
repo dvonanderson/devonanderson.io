@@ -2,9 +2,8 @@ import React from 'react'
 import Title from './Title'
 import services from '../constants/services'
 import styled from 'styled-components'
-import { Section } from 'styled/Section'
 import { device } from '../themes/mediaQueries'
-import Underline from 'styled/Underline'
+import { Underline, Section } from './Styled-Components'
 
 const ServiceSection = styled(Section)`
   background: ${props => props.theme.grey10};

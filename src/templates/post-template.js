@@ -6,8 +6,8 @@ import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
 import { device } from '../themes/mediaQueries'
 import BlogHero from '../components/BlogHero'
-import Underline from '../styled/Underline'
 import SEO from '../components/SEO'
+import { Underline } from '../components/Styled-Components'
 
 const PostTemplateWrapper = styled.section`
   width: 85vw;

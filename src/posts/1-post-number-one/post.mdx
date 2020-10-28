@@ -1,82 +1,71 @@
 ---
-title: Devons Test Post
-slug: devons-test-post
-image: ./images/post1-image.jpg
-date: 2020-09-24
+title: The Journey of a Front-End Developer
+slug: journey-of-a-frontend-developer
+image: ./images/css-code.jpg
+date: 2020-10-22
 author: devon anderson
-category: react.js
+category: the journey
 ---
 
-import { Button } from '../../styled/Button.js'
-import { Link } from 'gatsby'
-import { RegVideo, IVideo } from '../../styled/Video.js'
-import video from './images/post1-testvideo.mp4'
+import { Gif } from '../../components/Styled-Components'
+import { MdxBlockQuote } from '../../components/Mdx'
+import { BlogSignature } from '../../components/Mdx'
 
-# this is us
+As I let out a sigh of relief for things that I have accomplished over the last year in my career, I can't help but wonder... How in the hell did I get here? Where in the hell am I going? Are you happy dude? Questions that would no doubt take me a lifetime to answer for you, but these questions are the making of one heck of a story. The first thing that I can tell you, is that I am a "🤷🏾‍♂️-developer". I shrug at the front part of the developer because I don't have a dang clue what I would call myself, I just go by what the title on my business card or what the company that I work for calls me. My funny explanation is I dabble in the art and science of using funny words, symbols, and methodologies, to create cool stuff that will be used every day on phones, tablets, laptops, and so on. I love it, I love solving problems and coming up with solutions for features, but I will admit that I am a polyglot. I tend to want to know things that I find cool but really doesn't serve me any substance. I also know that I am not using the term "polyglot" in its correct definition, but it actually fits me. Here is how it started.
 
-Squid PBR&B truffaut chia selfies hoodie skateboard vice chambray williamsburg VHS pug church-key tacos. Hammock thundercats pinterest next level chia tacos four dollar toast iPhone, cold-pressed cardigan. Lyft listicle tacos craft beer man bun DIY flannel, selfies vice typewriter skateboard cloud bread kitsch beard. Literally bitters DIY kogi wayfarers. Celiac etsy bespoke chillwave humblebrag banh mi. Distillery chambray humblebrag, venmo salvia flexitarian edison bulb woke poutine mlkshk taiyaki whatever cold-pressed. You probably haven't heard of them deep v subway tile, hoodie synth tofu fixie crucifix.
+I began my web and app development career as a UX/UI designer _(well sort of)_. My friend was a product manager for a great digital platform firm and he was in need of someone to help him with client presentations and his pencil and paper drawings weren't going too well with the stakeholders. He knew that I had experience with [Adobe](https://www.adobe.com/) and their line of products. [Photoshop](https://www.adobe.com/products/photoshop.html) and [Illustrator](https://www.adobe.com/products/illustrator.html) were programs that I could get lost in for hours and come up with stuff like this 👇🏾.
 
-I need to come up with a structure for my post
+![image](./images/link-and-the-bot.jpg)
 
-![image](./images/post1-inlineimage-1.jpg)
+<MdxBlockQuote display="info">
+  I laugh at this image sometimes, because this project consumed about 3 months of my life. It was originally a game design concept with a storyboard and some 3D models, but it ultimately steered me into a world of making mocks, wireframing, and prototyping designs. This was my first stint into the world in the world of development, and as scared as I was it took me back to my childhood when I have aspirations of becoming a game developer. How silly was I?
 
-<RegVideo video={video} type="video/mp4" />
+<Gif
+  title="something special"
+  sourceUrl="https://giphy.com/embed/vi2ciYHi5u0FO"
+  alignment="center"
+/>
 
-<h2>regular heading</h2>
+Well not too silly, I still dream of it, I think it will eventually be my
+moonlighting adventure. I will never work for EA, Rockstar, or whatever the
+big-boy game production on the block, but maybe do an Indie game.
 
-<h2 title="true">Devon is the coolest</h2>
+</MdxBlockQuote>
 
-<h4>Hello world</h4>
+I still haven't really explained how I got here!
 
-`console.log("devon is here")`
+After working with him for on a couple of projects with my friend, I eventually decided that being an operations manager for e-commerce, and distribution was not my passion(although it was great money), and I needed to chase what I loved todo. What was my pathway, how was someone in their mid-thirties going to be able to go back to school and work a full-time job. I entered the world of coding bootcamps.
 
-<blockquote display="info">I will rull you</blockquote>
+![image](./images/coding-bootcamp-pic.jpg)
+
+I am not here to bash all boot camps, just the one I attended. Lucky for me before I entered this boot camp with a base knowledge of **HTML, CSS, and JavaScript**. I remember my cohorts and the look on their faces, as the instructor started flying through the material and would spend no time on basic syntax, use cases, or even real-life coding examples. He literally had a PowerPoint presentation that he read on the basics. And the next week we wrote our first fetch API request.
 
 ```js
-// comments
-const name = 'john'
-const channel = 'coding addict'
+function getPosts() {
+  fetch('https://jsonplaceholder.typicode.com/posts')
+    .then(res => res.json())
+    .then(data => {
+      let output = '<h2>Posts</h2>'
 
-function featuredProducts(data) {
-  return data.filter(item => {
-    return item.featured === true
-  })
+      data.forEach(function (post) {
+        output += `
+          <div>
+            <h3>${post.title}</h3>
+            <p>${post.body}</p>
+          </div>
+        `
+      })
+
+      document.getElementById('output').innerHTML = output
+    })
+    .catch(err => console.log(err))
 }
-featuredProducts()
 ```
 
-```jsx
-import React from 'react'
+This was a lot to chew on and JavaScript Prototype, JavaScript Closure, Module Patterns, Promises, DOM manipulation, and so much more. The boot camp gave you the option to find out if, what they were serving was to our taste, and within the first 2 weeks you had the option of dropping out, but you would all of our deposit _(2000 grand to be exact)_. So at week 5 of a 15 week program, they dangled the professional services carrot in your face. Now if you decided to stay with the boot camp at this point, you would pay the remaining balance of 💲8000 or have your financial aid signed and ready to go. The boot camp's professional services would give you a mentor, and a career counselor, and a guarantee that you would get a job. Well, they didn't actually guarantee it, they just sold the hell out of you finishing, and the getting a job process would take care of itself. The alarming truth was by week 2, 15 people out of 30 had dropped the course, but also lost out on 💲2000 bucks, and by before week 5, the boot camp was down another 5. The fortunate/unfortunate part about this was the fact that I feel you learn better from the experiences of others and their ideas, so having those people leave sucked because now your pool of information is a lot less. The fortunate part was the mentor ratio got better, and we all received an additional day of pair coding with our mentors.
 
-const Counter = () => {
-  const [count, setCount] = React.useState(0)
-  return (
-    <section className="counter">
-      <h4>show some love to MDX</h4>
-      <h4>likes {count}</h4>
-      <button className="btn btn-danger" onClick={() => setCount(count + 1)}>
-        i like mdx
-      </button>
-    </section>
-  )
-}
-export default Counter
-```
+Hold on...I thought you were here to bash this boot camp. I think if you are an aspiring developer, and you are mad serious about getting into this industry, you really should consider the time it takes and whether throwing 💲10,000 into a boot camp and not spending time on the fundamentals of programming isn't worth it. The basic concepts of computer science are rarely taught in boot camps, but if you find one that has "intro to CS" I would go for it. There are thousands of posts that will argue the point if, going to university, boot camp or self-taught is the way to go. I won't argue those points here, because I have done all three, and I really can't give you the answer you are looking for. What I will tell you is that it will take some time and even when you feel like you are at the pinnacle of your craft...you are not!
 
-```html
-<h1>hello world</h1>
-<p class="random">random text</p>
-<section class="contact">
-  <div class="title">
-    <h1>contact us</h1>
-  </div>
-</section>
-```
+When I started this adventure it was 2014, 6 years later I am still at the bottom of my goal peak 🏔️. I am currently a Front-End Developer that uses the [Ember.js](https://emberjs.com/) framework, but I have so much to learn, I have so much todo, and I have never been more excited. So good news I am taking you with me and it will be fun and funny 😉.
 
-```css
-max-width: 500px;
-border-radius: var(--radius);
-padding: 1rem 1.5rem;
-background: var(--clr-grey-10);
-text-align: center;
-```
+<BlogSignature />

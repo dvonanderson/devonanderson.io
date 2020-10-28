@@ -3,9 +3,8 @@ import { graphql, useStaticQuery } from 'gatsby'
 import SocialLinks from 'constants/socialLinks'
 import styled from 'styled-components'
 import { device } from 'themes/mediaQueries'
-import { SectionCenter } from 'styled/Section'
-import Underline from 'styled/Underline'
 import Image from 'gatsby-image'
+import { SectionCenter, Underline } from './Styled-Components'
 
 const HeroHeader = styled.header`
   margin-top: -5rem;

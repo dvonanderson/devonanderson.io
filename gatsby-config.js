@@ -1,6 +1,7 @@
 require('dotenv').config({
   path: `.env.${process.env.NODE_ENV}`,
 })
+const emoji = require(`remark-emoji`)
 
 const {
   NODE_ENV,
@@ -86,6 +87,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
+        remarkPlugins: [emoji],
         gatsbyRemarkPlugins: [
           {
             resolve: `gatsby-remark-images`,
@@ -94,16 +96,6 @@ module.exports = {
             },
           },
         ],
-      },
-    },
-    {
-      resolve: `gatsby-transformer-remark`,
-      options: {
-        commonmark: true,
-        footnotes: true,
-        pedantic: true,
-        gfm: true,
-        plugins: [],
       },
     },
     `gatsby-remark-reading-time`,

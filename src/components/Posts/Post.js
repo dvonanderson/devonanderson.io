@@ -3,9 +3,9 @@ import Image from 'gatsby-image'
 import { FaRegClock } from 'react-icons/fa'
 import { IoMdArrowRoundForward } from 'react-icons/io'
 import styled from 'styled-components'
-import Underline from 'styled/Underline'
 import { Link } from 'gatsby'
 import { device } from '../../themes/mediaQueries'
+import { Underline } from '../Styled-Components'
 
 const PostWrapper = styled.article`
   padding: 0.5rem;

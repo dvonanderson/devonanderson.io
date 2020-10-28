@@ -4,7 +4,7 @@ import Title from '../../components/Title'
 import Banner from '../Banner'
 import styled from 'styled-components'
 import { device } from '../../themes/mediaQueries'
-import { Section } from '../../styled/Section'
+import { Section } from '../Styled-Components'
 
 const PostsSection = styled(Section)`
   width: 85vw;

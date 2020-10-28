@@ -1,6 +1,6 @@
-import React from "react"
-import styled from "styled-components"
-import {Button} from "styled/Button"
+import React from 'react'
+import styled from 'styled-components'
+import { Button } from '../components/Styled-Components'
 
 const ContactSection = styled.div`
   ${props => props.theme.pagesStyling};
@@ -67,9 +67,24 @@ const contact = () => {
         <h3>get in touch</h3>
         <form action="https://formspree.io/myybgjvw" method="POST">
           <ContactFormGroup>
-            <ContactFormControl as="input" type="text" placeholder="name" name="name"/>
-            <ContactFormControl as="input" type="email" placeholder="email" name="email"/>
-            <ContactFormControl as="textarea" name="message" placeholder="message" row="5"></ContactFormControl>
+            <ContactFormControl
+              as="input"
+              type="text"
+              placeholder="name"
+              name="name"
+            />
+            <ContactFormControl
+              as="input"
+              type="email"
+              placeholder="email"
+              name="email"
+            />
+            <ContactFormControl
+              as="textarea"
+              name="message"
+              placeholder="message"
+              row="5"
+            ></ContactFormControl>
           </ContactFormGroup>
           <SubmitButton type="submit">submit</SubmitButton>
         </form>

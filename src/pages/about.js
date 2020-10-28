@@ -3,11 +3,13 @@ import { graphql, Link } from 'gatsby'
 import Title from '../components/Title'
 import Image from 'gatsby-image'
 import styled from 'styled-components'
-import { SectionCenter } from 'styled/Section'
-import AboutStack from 'styled/StackSpan'
 import { device } from '../themes/mediaQueries'
 import SEO from '../components/SEO'
-import { Button } from 'styled/Button'
+import {
+  Button,
+  StackSpan as AboutStack,
+  SectionCenter,
+} from '../components/Styled-Components'
 
 const AboutSection = styled.section`
   ${props => props.theme.pagesStyling};

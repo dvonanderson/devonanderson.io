@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { device } from 'themes/mediaQueries'
 import Image from 'gatsby-image'
-import ProjectStackSpan from 'styled/StackSpan'
+import { StackSpan as ProjectStackSpan } from '../components/Styled-Components'
 import { FaGithubSquare, FaShareSquare } from 'react-icons/fa'
 
 const ProjectArticle = styled.article.attrs({

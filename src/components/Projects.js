@@ -1,36 +1,29 @@
-import React from "react"
-import Title from "./Title"
-import Project from "./Project"
-import { Link } from "gatsby"
-import { Section, SectionCenter } from "styled/Section";
-import styled from "styled-components"
-import {Button} from "styled/Button";
-import PropTypes from "prop-types"
+import React from 'react'
+import Title from './Title'
+import Project from './Project'
+import { Link } from 'gatsby'
+import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import { Button, Section, SectionCenter } from './Styled-Components'
 
 const ProjectsSection = styled(Section)`
   background: ${props => props.theme.grey10};
 `
 
-const Projects = ({projects, title, showLink}) => {
+const Projects = ({ projects, title, showLink }) => {
   return (
     <ProjectsSection>
       <Title title={title} />
       <SectionCenter>
-        {
-          projects.map((project, index) => {
-            return (
-              <Project key={project.strapiId} index={index} {...project}/>
-            )
-          })
-        }
+        {projects.map((project, index) => {
+          return <Project key={project.strapiId} index={index} {...project} />
+        })}
       </SectionCenter>
-      {
-        showLink && (
-          <Button as={Link} to="/projects" center="true">
-            projects
-          </Button>
-        )
-        }
+      {showLink && (
+        <Button as={Link} to="/projects" center="true">
+          projects
+        </Button>
+      )}
     </ProjectsSection>
   )
 }

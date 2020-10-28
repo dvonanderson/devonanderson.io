@@ -36,7 +36,11 @@ const About = () => {
     <AboutWrapper>
       <Title title="about me" />
       <Image fixed={data.person.childImageSharp.fixed} />
-      <p>I am devon</p>
+      <p>
+        Hello all, I am Devon. I created this blog to share my adventures with
+        you as I learn and progress through the world of web and app
+        development. I also thought it was cool.
+      </p>
       <BannerSocalLinks banner />
     </AboutWrapper>
   )

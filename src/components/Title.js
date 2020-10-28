@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import PropTypes from 'prop-types'
-import Underline from 'styled/Underline'
+import { Underline } from './Styled-Components'
 
 const TitleWrapper = styled.div`
   .title {

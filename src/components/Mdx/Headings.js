@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import Underline from '../../styled/Underline'
+import { Underline } from '../Styled-Components'
 
 const FirstHeadingTwo = styled.div`
   margin: 2rem 0;

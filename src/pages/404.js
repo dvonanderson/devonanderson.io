@@ -1,8 +1,8 @@
-import React from "react"
-import { Link } from "gatsby"
-import { Button } from "../styled/Button"
-import SEO from "../components/SEO"
-import styled from "styled-components"
+import React from 'react'
+import { Link } from 'gatsby'
+import SEO from '../components/SEO'
+import styled from 'styled-components'
+import { Button } from '../components/Styled-Components'
 
 const ErrorMain = styled.main`
   ${props => props.theme.pagesStyling};
@@ -21,15 +21,16 @@ const ErrorMain = styled.main`
 const ErrorPage = () => {
   return (
     <>
-      <SEO title="Error" description="portfolio 404 error page"/>
+      <SEO title="Error" description="portfolio 404 error page" />
       <ErrorMain>
         <div className="error-container">
           <h1>oops page doesn't exist</h1>
-          <Button as={Link} to="/">back to home</Button>
+          <Button as={Link} to="/">
+            back to home
+          </Button>
         </div>
       </ErrorMain>
     </>
-
   )
 }
 

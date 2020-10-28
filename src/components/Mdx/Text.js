@@ -11,15 +11,19 @@ const EmText = styled.span`
   color: ${props => props.theme.primary6};
 `
 
-const StyledLink = styled.a`
-  & :hover {
-    color: ${props => props.theme.primary5};
-    box-shadow: 0px 2px ${props => props.theme.primary5};
+const StyledLinkWrapper = styled.a`
+  .mdx-link {
+    color: ${props => props.theme.primary6};
+    & :hover {
+      color: ${props => props.theme.primary5};
+      box-shadow: 0px 2px ${props => props.theme.primary5};
+      cursor: pointer;
+    }
   }
 `
 
 const Strong = ({ children }) => <StrongText>{children}</StrongText>
-const Em = ({ children }) => <EmText>{children}</EmText>
-const MdxLink = ({ children }) => <StyledLink>{children}</StyledLink>
 
-export { Strong, Em, MdxLink }
+const Em = ({ children }) => <EmText>{children}</EmText>
+
+export { Strong, Em }

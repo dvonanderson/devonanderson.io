@@ -19,7 +19,6 @@ const components = {
   blockquote: MdxBlockQuote,
   pre: Prism,
   em: Text.Em,
-  a: Text.MdxLink,
 }
 export const wrapRootElement = ({ element }) => (
   <Layout>

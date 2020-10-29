@@ -15,8 +15,16 @@ const PostTemplateWrapper = styled.section`
   margin: 0 auto;
   margin-bottom: 4rem;
 
+  article :nth-of-type(2) {
+    margin-top: 3rem;
+  }
+
   @media ${device.laptop} {
     width: 92vw;
+
+    article: nth-of-type(2) {
+      margin-top: 0;
+    }
   }
   @media ${device.desktop} {
     display: grid;

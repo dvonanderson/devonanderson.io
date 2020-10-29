@@ -14,8 +14,12 @@ const PostsSection = styled(Section)`
 
   .blogPage {
     display: grid;
-    grid-template-columns: 1fr 250px;
+    grid-template-rows: auto auto;
     column-gap: 1rem;
+
+    @media ${device.laptop} {
+      grid-template-columns: 1fr 250px;
+    }
   }
 
   @media ${device.laptop} {
